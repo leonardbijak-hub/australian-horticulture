@@ -1,5 +1,6 @@
 'use strict';
 (async function(){
+  const assetVersion='20261015-chart-fixes';
   const fileNames=['01.vl.json','02.vg.json','03.vl.json','04.vl.json','05.vl.json','06.vl.json','07.vg.json','08.vl.json','09.vl.json','10.vl.json','11.vg.json','12.vl.json','13.vl.json'];
   const cache=new Map(),loader=vega.loader({baseURL:document.baseURI});
   const originalLoad=loader.load.bind(loader);
@@ -17,7 +18,7 @@
     const el=document.getElementById('c'+String(i+1).padStart(2,'0'));
     el.innerHTML='<p class="chart-loading">Loading the published data…</p>';
     try{
-      const response=await fetch(fileNames[i]);if(!response.ok)throw new Error('Specification unavailable');
+      const response=await fetch(fileNames[i]+'?v='+assetVersion);if(!response.ok)throw new Error('Specification unavailable');
       const spec=await response.json();
       const native=fileNames[i].includes('.vg.');
       const size=dimensions(el,native,i);
