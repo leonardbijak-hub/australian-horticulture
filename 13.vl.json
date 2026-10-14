@@ -92,7 +92,10 @@
         "y": {
           "field": "base",
           "type": "quantitative",
-          "title": null
+          "title": "Index (2022/23 = 100)",
+          "axis": {
+            "title": "Index (2022/23 = 100)"
+          }
         }
       }
     },
@@ -129,6 +132,9 @@
               135
             ],
             "zero": false
+          },
+          "axis": {
+            "title": "Index (2022/23 = 100)"
           }
         },
         "color": {
@@ -175,5 +181,10 @@
         ]
       }
     }
-  ]
+  ],
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  }
 }

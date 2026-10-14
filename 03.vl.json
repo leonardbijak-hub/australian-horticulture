@@ -81,7 +81,10 @@
         "y": {
           "field": "end",
           "type": "quantitative",
-          "title": "Increase in production value (AUD million)"
+          "title": "Value added (AUD million)",
+          "axis": {
+            "title": "Value added (AUD million)"
+          }
         },
         "y2": {
           "field": "start"
@@ -142,7 +145,10 @@
         "y": {
           "field": "end",
           "type": "quantitative",
-          "title": null
+          "title": "Value added (AUD million)",
+          "axis": {
+            "title": "Value added (AUD million)"
+          }
         },
         "text": {
           "field": "change",
@@ -152,5 +158,10 @@
         }
       }
     }
-  ]
+  ],
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  }
 }

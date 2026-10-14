@@ -73,7 +73,10 @@
         "y": {
           "field": "baseline",
           "type": "quantitative",
-          "title": null
+          "title": "Index (2020/21 = 100)",
+          "axis": {
+            "title": "Index (2020/21 = 100)"
+          }
         }
       }
     },
@@ -112,6 +115,9 @@
               135
             ],
             "zero": false
+          },
+          "axis": {
+            "title": "Index (2020/21 = 100)"
           }
         },
         "color": {
@@ -169,5 +175,10 @@
         ]
       }
     }
-  ]
+  ],
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  }
 }

@@ -31,6 +31,10 @@
   "transform": [
     {
       "filter": "datum.leading==1 && datum.year>2021"
+    },
+    {
+      "calculate": "abs(datum.value_growth)<0.05 ? '0.0' : format(datum.value_growth,'+.1f')",
+      "as": "growth_label"
     }
   ],
   "encoding": {
@@ -127,10 +131,8 @@
       },
       "encoding": {
         "text": {
-          "field": "value_growth",
-          "type": "quantitative",
-          "title": null,
-          "format": "+.0f"
+          "field": "growth_label",
+          "type": "nominal"
         },
         "color": {
           "condition": {
@@ -141,5 +143,10 @@
         }
       }
     }
-  ]
+  ],
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  }
 }

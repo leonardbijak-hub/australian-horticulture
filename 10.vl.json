@@ -66,6 +66,9 @@
               0,
               2550
             ]
+          },
+          "axis": {
+            "title": "Million plant units"
           }
         },
         "tooltip": [
@@ -111,7 +114,10 @@
         "y": {
           "field": "volume",
           "type": "quantitative",
-          "title": null
+          "title": "Million plant units",
+          "axis": {
+            "title": "Million plant units"
+          }
         },
         "text": {
           "field": "volume",
@@ -121,5 +127,10 @@
         }
       }
     }
-  ]
+  ],
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  }
 }

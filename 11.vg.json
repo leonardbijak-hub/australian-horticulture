@@ -65,7 +65,7 @@
         },
         "update": {
           "path": {
-            "signal": "'M'+width*.10+','+datum.sy+' C'+width*.38+','+datum.sy+' '+width*.43+','+datum.ty+' '+width*.68+','+datum.ty+' L'+width*.68+','+datum.ty2+' C'+width*.43+','+datum.ty2+' '+width*.38+','+datum.sy2+' '+width*.10+','+datum.sy2+' Z'"
+            "signal": "'M'+width*.10+','+datum.sy+' C'+(width*.10+(flowEnd-width*.10)*.45)+','+datum.sy+' '+(width*.10+(flowEnd-width*.10)*.55)+','+datum.ty+' '+flowEnd+','+datum.ty+' L'+flowEnd+','+datum.ty2+' C'+(width*.10+(flowEnd-width*.10)*.55)+','+datum.ty2+' '+(width*.10+(flowEnd-width*.10)*.45)+','+datum.sy2+' '+width*.10+','+datum.sy2+' Z'"
           }
         }
       }
@@ -147,10 +147,10 @@
       "encode": {
         "update": {
           "x": {
-            "signal": "width*.68"
+            "signal": "flowEnd"
           },
           "x2": {
-            "signal": "width*.70"
+            "signal": "flowEnd+16"
           },
           "y": {
             "field": "ty"
@@ -172,13 +172,13 @@
       "encode": {
         "update": {
           "x": {
-            "signal": "width*.72"
+            "signal": "flowEnd+24"
           },
           "y": {
-            "signal": "(datum.ty+datum.ty2)/2-5"
+            "signal": "(datum.ty+datum.ty2)/2-13"
           },
           "text": {
-            "field": "name"
+            "signal": "datum.name=='Domestic fresh supply' ? ['Domestic fresh','supply'] : datum.name"
           },
           "fontSize": {
             "value": 12
@@ -188,6 +188,9 @@
           },
           "fill": {
             "value": "#274137"
+          },
+          "lineHeight": {
+            "value": 14
           }
         }
       }
@@ -200,10 +203,10 @@
       "encode": {
         "update": {
           "x": {
-            "signal": "width*.72"
+            "signal": "flowEnd+24"
           },
           "y": {
-            "signal": "(datum.ty+datum.ty2)/2+13"
+            "signal": "(datum.ty+datum.ty2)/2+17"
           },
           "text": {
             "signal": "format(datum.tonnes,',.0f')+' t ('+format(datum.share,'.1f')+'%)'"
@@ -216,6 +219,12 @@
           }
         }
       }
+    }
+  ],
+  "signals": [
+    {
+      "name": "flowEnd",
+      "update": "max(width*0.35,width-195)"
     }
   ]
 }

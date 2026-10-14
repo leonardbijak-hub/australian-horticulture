@@ -54,7 +54,11 @@
         "x": {
           "field": "zero",
           "type": "quantitative",
-          "title": null
+          "title": "Physical output change (%)",
+          "axis": {
+            "title": "Physical output change (%)",
+            "format": ".0f"
+          }
         }
       }
     },
@@ -78,7 +82,11 @@
         "y": {
           "field": "zero",
           "type": "quantitative",
-          "title": null
+          "title": "Production value change (%)",
+          "axis": {
+            "title": "Production value change (%)",
+            "format": ".0f"
+          }
         }
       }
     },
@@ -94,23 +102,31 @@
         "x": {
           "field": "volume_growth",
           "type": "quantitative",
-          "title": "Change in physical output (%)",
+          "title": "Physical output change (%)",
           "scale": {
             "domain": [
               -20,
               33
             ]
+          },
+          "axis": {
+            "title": "Physical output change (%)",
+            "format": ".0f"
           }
         },
         "y": {
           "field": "value_growth",
           "type": "quantitative",
-          "title": "Change in production value (%)",
+          "title": "Production value change (%)",
           "scale": {
             "domain": [
               -5,
               30
             ]
+          },
+          "axis": {
+            "title": "Production value change (%)",
+            "format": ".0f"
           }
         },
         "color": {
@@ -182,12 +198,20 @@
         "x": {
           "field": "volume_growth",
           "type": "quantitative",
-          "title": null
+          "title": "Physical output change (%)",
+          "axis": {
+            "title": "Physical output change (%)",
+            "format": ".0f"
+          }
         },
         "y": {
           "field": "value_growth",
           "type": "quantitative",
-          "title": null
+          "title": "Production value change (%)",
+          "axis": {
+            "title": "Production value change (%)",
+            "format": ".0f"
+          }
         },
         "text": {
           "field": "display",
@@ -196,5 +220,10 @@
         }
       }
     }
-  ]
+  ],
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  }
 }

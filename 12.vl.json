@@ -1463,7 +1463,7 @@
           "#527647"
         ]
       },
-      "legend": {}
+      "legend": null
     },
     "tooltip": [
       {
@@ -1484,5 +1484,10 @@
         "format": ",.1f"
       }
     ]
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
   }
 }

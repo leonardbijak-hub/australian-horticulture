@@ -140,7 +140,11 @@
               100,
               1000,
               2500
-            ]
+            ],
+            "symbolFillColor": {
+              "expr": "stateSector=='Fruit' ? '#c7652a' : stateSector=='Vegetables' ? '#276f8a' : '#527647'"
+            },
+            "symbolStrokeColor": "white"
           }
         },
         "color": {
@@ -258,5 +262,10 @@
         }
       }
     }
-  ]
+  ],
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  }
 }

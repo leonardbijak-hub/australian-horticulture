@@ -3,7 +3,10 @@
   "width": 440,
   "height": 335,
   "padding": 8,
-  "autosize": "pad",
+  "autosize": {
+    "type": "pad",
+    "resize": true
+  },
   "background": "transparent",
   "config": {
     "font": "Arial"
@@ -44,6 +47,11 @@
         {
           "type": "filter",
           "expr": "!datum.children"
+        },
+        {
+          "type": "formula",
+          "expr": "indexof([\"Fruit:Table grapes\", \"Fruit:Bananas\", \"Fruit:Avocados\", \"Fruit:Apples\", \"Fruit:Oranges\", \"Fruit:rest\", \"Vegetables:Potatoes\", \"Vegetables:Leafy salad vegetables\", \"Vegetables:Tomatoes\", \"Vegetables:Mushrooms\", \"Vegetables:Parsley and other fresh herbs excluding fennel\", \"Vegetables:rest\", \"Nursery:Nursery\"], datum.id)+1",
+          "as": "keyNumber"
         }
       ]
     }
@@ -71,7 +79,12 @@
         "data": "leaves"
       },
       "encode": {
-        "enter": {
+        "hover": {
+          "fillOpacity": {
+            "value": 1
+          }
+        },
+        "update": {
           "x": {
             "field": "x0"
           },
@@ -97,11 +110,6 @@
           "tooltip": {
             "signal": "{'Industry':datum.name,'Sector':datum.sector,'AUD million':format(datum.value,',.1f'),'Year':'2024/25'}"
           }
-        },
-        "hover": {
-          "fillOpacity": {
-            "value": 1
-          }
         }
       }
     },
@@ -111,58 +119,33 @@
         "data": "leaves"
       },
       "encode": {
-        "enter": {
+        "update": {
           "x": {
-            "signal": "datum.x0+9"
+            "signal": "(datum.x0+datum.x1)/2"
           },
           "y": {
-            "signal": "datum.y0+18"
+            "signal": "(datum.y0+datum.y1)/2"
           },
           "text": {
-            "field": "name"
+            "signal": "format(datum.keyNumber,'02d')"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
           },
           "fill": {
             "value": "white"
           },
           "fontSize": {
-            "value": 12
+            "value": 16
           },
           "fontWeight": {
             "value": "bold"
           },
-          "limit": {
-            "signal": "datum.x1-datum.x0-16"
-          },
-          "opacity": {
-            "signal": "datum.y1-datum.y0>40 ? 1 : 0"
-          }
-        }
-      }
-    },
-    {
-      "type": "text",
-      "from": {
-        "data": "leaves"
-      },
-      "encode": {
-        "enter": {
-          "x": {
-            "signal": "datum.x0+9"
-          },
-          "y": {
-            "signal": "datum.y0+36"
-          },
-          "text": {
-            "signal": "'$'+format(datum.value/1000,'.2f')+'b'"
-          },
-          "fill": {
-            "value": "white"
-          },
-          "fontSize": {
-            "value": 11
-          },
-          "opacity": {
-            "signal": "datum.y1-datum.y0>44 && datum.x1-datum.x0>60 ? 1 : 0"
+          "tooltip": {
+            "signal": "{'Industry':datum.name,'Sector':datum.sector,'AUD million':format(datum.value,',.1f'),'Year':'2024/25'}"
           }
         }
       }
