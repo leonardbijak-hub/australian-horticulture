@@ -1,8 +1,8 @@
 'use strict';
 (async function(){
-  const assetVersion='20261015-chart-fixes';
+  const assetVersion='20261015-chart-fixes-2';
   const fileNames=['01.vl.json','02.vg.json','03.vl.json','04.vl.json','05.vl.json','06.vl.json','07.vg.json','08.vl.json','09.vl.json','10.vl.json','11.vg.json','12.vl.json','13.vl.json'];
-  const cache=new Map(),loader=vega.loader({baseURL:document.baseURI});
+  const cache=new Map(),loader=vega.loader({baseURL:new URL('.',document.baseURI).href});
   const originalLoad=loader.load.bind(loader);
   loader.load=(url,options)=>{if(!cache.has(url))cache.set(url,originalLoad(url,options));return cache.get(url)};
   const results=[];
