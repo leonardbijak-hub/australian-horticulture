@@ -1,8 +1,14 @@
 # Grown Unevenly
 
-A single-page Vega/Vega-Lite visualisation of Australia's fruit, vegetable and nursery industries. Created for FIT3179 Data Visualisation 2 by Leo, October 2026.
+My FIT3179 Data Visualisation 2 project explores Australia's fruit, vegetable and nursery industries. I use production value, physical output and regional data to investigate how the industry changed between 2020/21 and 2024/25.
 
-Research question: How did these industries change between 2020/21 and 2024/25, and which industries and regions account for differences between growth in dollar value and physical output?
+[View my visualisation](https://leonardbijak-hub.github.io/australian-horticulture/)
+
+## Research question
+
+How did these industries change between 2020/21 and 2024/25, and which industries and regions account for differences between growth in dollar value and physical output?
+
+I organised the story into four sections: growth, geography, output, and markets and industry. The main distinction is between growth in dollar value and growth in physical production. I compare these measures separately because a higher production value does not necessarily mean more produce or plants were grown.
 
 ## Files
 
@@ -11,7 +17,7 @@ Research question: How did these industries change between 2020/21 and 2024/25, 
 - CSV and JSON files: prepared chart data, with original units and sources.
 - `australia.topojson`: simplified ABS ASGS Edition 3 state boundaries.
 - `METHODS.md`: source coverage, preparation, formulas, limitations and What/Why/How design rationale.
-- `HAND_DRAWN_SKETCH_GUIDE.md`: instructions for the student's required hand-drawn A4 sketch. This guide is not the submitted sketch.
+- `HAND_DRAWN_SKETCH_GUIDE.md`: my layout plan for the required hand-drawn A4 sketch. The actual sketch still needs to be added.
 - Vendor scripts and `THIRD_PARTY_LICENSES.txt`: pinned, locally hosted Vega 5.30.0, Vega-Lite 5.20.1 and Vega-Embed 6.26.0.
 
 ## Running
@@ -20,12 +26,16 @@ Serve this directory over HTTP, or enable GitHub Pages using the `main` branch a
 
 ## Validation
 
-All 13 specifications were compiled and rendered to SVG with their real data. The value/output, state/year, yield/year and cartogram/year controls were exercised. The three-sector treemap reconciles to $16,125.2m. The potato production flows reconcile exactly. Source geometry was simplified, degenerate rings removed and spherical winding checked.
+I checked all 13 specifications by compiling and rendering them to SVG with the prepared data. I also checked the value/output, state/year, yield/year and cartogram/year controls. The three-sector treemap totals $16,125.2m, and the potato production flows balance exactly. The map geometry was checked after simplification, including degenerate rings and spherical winding.
 
-The original source PDFs and spreadsheets are linked in METHODS.md, rather than republished here. The source datasets retain their publishers' conditions. Third-party software licences are included.
+I have linked the original PDFs and spreadsheets in METHODS.md. The source datasets retain their publishers' conditions, and the repository includes the third-party software licences.
 
-## Submission work still required
+## Remaining submission tasks
 
-The student must draw the A4 sketch by hand, scan or photograph it and upload an actual sketch PDF. A computer-generated layout does not fulfil this requirement. Use the current four-section page when preparing or checking the sketch. Moodle submission and the studio interview are completed by the student.
+I still need to draw the A4 sketch by hand, scan or photograph it, and add the sketch PDF. It should follow the same four-section structure as the page. I also need to review the final narrative and data, prepare to explain my design choices in the studio interview, and submit through Moodle.
 
-AI acknowledgement: ChatGPT/Codex assisted with source research, data preparation, narrative text, code and verification. The student should review the work and explain the design choices at the interview.
+## Acknowledgements
+
+I used ChatGPT/Codex to assist with source research, data preparation, narrative text, code and verification.
+
+Leo · October 2026

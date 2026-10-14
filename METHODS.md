@@ -2,11 +2,11 @@
 
 ## Domain, why and who
 
-Domain: Australian horticulture, focusing on fruit, vegetables and nursery production.
+I focus on Australian horticulture, specifically fruit, vegetables and nursery production.
 
-Why: determine how production changed over time, identify major industries, compare geographic concentration, and distinguish economic value from physical output. The page presents a guided story with limited, purposeful exploration.
+My aim is to show how production changed over time, identify major industries, compare geographic concentration, and distinguish economic value from physical output. I use a guided story with controls for exploring relevant comparisons.
 
-Who: a general reader in Australia or Malaysia. Financial years, farm-gate value, bearing area, indices and cartograms are explained in ordinary language. No specialist statistical knowledge is assumed.
+I designed the page for a general reader in Australia or Malaysia. I explain financial years, farm-gate value, bearing area, indices and cartograms in ordinary language, without assuming specialist statistical knowledge.
 
 ## What: sources and creation
 
@@ -24,19 +24,19 @@ Australian Horticulture Statistics Handbook 2024/25, prepared by Kynetec; refere
 
 [Other horticulture PDF](https://edge.sitecorecloud.io/hortinnovat2fab-hortinnovat9661-production6d5f-0e78/media/Sub-pages/About-us/What-we-do/PDFs-and-other-media/australian-horticulture-statistics-handbook-2024-25-other.pdf)
 
-National five-year sector tables: fruit printed page 33, vegetables page 203, nursery page 414. Potato flows and history: pages 339–340. Figures were extracted from the original PDF tables and retained at their published precision. No missing years were interpolated.
+I used the national five-year sector tables on printed pages 33 (fruit), 203 (vegetables) and 414 (nursery), and the potato flows and history on pages 339–340. I extracted figures from the original PDF tables at their published precision and left missing years unfilled.
 
 ### Australian Bureau of Statistics
 
 [Australian Agriculture: Horticulture, 2024/25](https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release), released 30 June 2026.
 
-[General horticulture workbook](https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25/AAHDC_Aust_Horticulture_202425.xlsx): Table 1 supplies state sector values; Tables 2 and 3 supply fruit/vegetable commodity histories; Table 5 supplies nursery values. These tables reproduce Hort Innovation data and must not be presented as an independent survey confirming the handbook.
+[General horticulture workbook](https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25/AAHDC_Aust_Horticulture_202425.xlsx): I used Table 1 for state sector values, Tables 2 and 3 for fruit/vegetable commodity histories, and Table 5 for nursery values. These tables reproduce Hort Innovation data, so I treat them as the same underlying source rather than independent confirmation of the handbook.
 
 [Selected-crop workbook](https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25/AAHDC_Hort_Selected_Commodities_202425.xlsx): Table 1 supplies avocado production, bearing area, total crop area and business counts for 2022/23–2024/25. These experimental estimates integrate additional crop mapping and industry inputs. The additional area and grower variables provide substantive information beyond the handbook's production tables.
 
-[Methodology](https://www.abs.gov.au/methodologies/australian-agriculture-horticulture-methodology/2024-25): experimental regional estimates, revisions, units and confidentiality. Some general avocado state data describe packing locations; selected estimates describe growing locations. The page keeps those populations distinct.
+[Methodology](https://www.abs.gov.au/methodologies/australian-agriculture-horticulture-methodology/2024-25): experimental regional estimates, revisions, units and confidentiality. Some general avocado state data describe packing locations; selected estimates describe growing locations. I keep those populations distinct in the page.
 
-Workbooks were read without editing the originals, reshaped from year columns to tidy records, and converted to typed chart data. Unavailable, suppressed or non-numeric values remain missing. Published numeric zeroes remain zeroes.
+I read the workbooks without editing the originals, reshaped year columns into tidy records, and converted the results to typed chart data. Unavailable, suppressed or non-numeric values remain missing. Published numeric zeroes remain zeroes.
 
 ### Geography
 
@@ -57,7 +57,7 @@ The two conventional maps use `conicEqualArea`, rotation -134 degrees, parallels
 | `cartogram_data.json` | Nursery state-year values and non-overlapping relative positions |
 | `potato_supply.csv` | Published 2024/25 processing, fresh-export, domestic-fresh, retail and food-service volumes |
 
-The unneeded trade snapshot extraction is excluded from the delivered site because inconsistencies between snapshot and commodity tables require reconciliation before use. The export composition chart instead uses each sector's own five-year aggregate table. ABARES workforce downloads were inaccessible, so no unverified worker composition has been added.
+I used each sector's five-year aggregate table for the export composition chart. I excluded a separate trade snapshot because its figures did not reconcile with the commodity tables. I also left out workforce comparisons because I could not verify the ABARES downloads.
 
 ## Calculations and checks
 
@@ -97,8 +97,8 @@ There are 13 charts and nine distinct advanced idioms, including three different
 
 ## Interaction, layout and accessibility
 
-One scrolling page, four narrative sections, responsive columns, direct takeaways and an ending synthesis. Controls only change appropriate chart elements; no control replaces a major section. Tooltips give detail, while the central story remains visible without hover. Sector colours stay consistent; the heatmap has a separate explicit diverging legend. Typography uses serif headings and sans-serif body/chart labels. Focus styles, semantic headings, chart descriptions and reduced-motion support improve access.
+I organised the scrolling page into four narrative sections with responsive columns, direct takeaways and a closing synthesis. Controls update individual charts, while the main story stays visible without interaction. I use consistent sector colours and a separate diverging legend for the heatmap. Headings use Georgia, a serif font; body text and chart labels use sans-serif fonts. I included focus styles, semantic headings, chart descriptions and reduced-motion support.
 
 The page locally hosts version-pinned Vega libraries and reuses data loads. Prepared data and specifications total well below a few megabytes. There are no original third-party graphics, stock photographs or copied dashboards.
 
-Author: Leo. Date: 14 October 2026. AI acknowledgement: ChatGPT/Codex assisted with research, preparation, writing, coding and verification. The student must review the narrative and data and complete their own hand-drawn A4 sketch and interview preparation.
+Leo · 14 October 2026. I used ChatGPT/Codex to assist with research, data preparation, writing, coding and verification. My remaining submission tasks are recorded in the README.
