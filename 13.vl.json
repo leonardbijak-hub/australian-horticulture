@@ -1,0 +1,179 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 440,
+  "height": 280,
+  "config": {
+    "background": "transparent",
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titlePadding": 12,
+      "labelColor": "#53615c",
+      "titleColor": "#53615c",
+      "gridColor": "#e3e7e0",
+      "domain": false,
+      "tickColor": "#cbd3cb"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "title": null,
+      "orient": "bottom",
+      "symbolType": "circle"
+    }
+  },
+  "data": {
+    "values": [
+      {
+        "year": 2023,
+        "period": "2022/23",
+        "measure": "Bearing area",
+        "value": 14228.8,
+        "index": 100.0
+      },
+      {
+        "year": 2023,
+        "period": "2022/23",
+        "measure": "Grower businesses",
+        "value": 802.0,
+        "index": 100.0
+      },
+      {
+        "year": 2024,
+        "period": "2023/24",
+        "measure": "Bearing area",
+        "value": 17224.2,
+        "index": 121.05166985269314
+      },
+      {
+        "year": 2024,
+        "period": "2023/24",
+        "measure": "Grower businesses",
+        "value": 752.0,
+        "index": 93.76558603491272
+      },
+      {
+        "year": 2025,
+        "period": "2024/25",
+        "measure": "Bearing area",
+        "value": 18351.2,
+        "index": 128.9722253457776
+      },
+      {
+        "year": 2025,
+        "period": "2024/25",
+        "measure": "Grower businesses",
+        "value": 721.0,
+        "index": 89.9002493765586
+      }
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "base": 100
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#a5b09f",
+        "strokeDash": [
+          4,
+          4
+        ]
+      },
+      "encoding": {
+        "y": {
+          "field": "base",
+          "type": "quantitative",
+          "title": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 60
+        },
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "2022/23",
+            "2023/24",
+            "2024/25"
+          ],
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative",
+          "title": "Index (2022/23 = 100)",
+          "scale": {
+            "domain": [
+              85,
+              135
+            ],
+            "zero": false
+          }
+        },
+        "color": {
+          "field": "measure",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Bearing area",
+              "Grower businesses"
+            ],
+            "range": [
+              "#276f8a",
+              "#6c765d"
+            ]
+          },
+          "legend": {
+            "orient": "bottom"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "measure",
+            "type": "nominal",
+            "title": "Measure"
+          },
+          {
+            "field": "period",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "title": "Hectares / businesses",
+            "format": ",.1f"
+          },
+          {
+            "field": "index",
+            "type": "quantitative",
+            "title": "Index",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ]
+}

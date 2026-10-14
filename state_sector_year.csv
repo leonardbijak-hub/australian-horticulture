@@ -1,0 +1,106 @@
+state,sector,year,period,value_m,source,lon,lat,abbr
+New South Wales,Fruit,2021,2020/21,1082.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Fruit,2022,2021/22,1044.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Fruit,2023,2022/23,1240.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Fruit,2024,2023/24,1477.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Fruit,2025,2024/25,1542.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Vegetables,2021,2020/21,513.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Vegetables,2022,2021/22,603.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Vegetables,2023,2022/23,659.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Vegetables,2024,2023/24,595.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Vegetables,2025,2024/25,618.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+Victoria,Fruit,2021,2020/21,1741.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Fruit,2022,2021/22,1723.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Fruit,2023,2022/23,1903.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Fruit,2024,2023/24,1831.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Fruit,2025,2024/25,1912.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Vegetables,2021,2020/21,1487.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Vegetables,2022,2021/22,1702.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Vegetables,2023,2022/23,1505.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Vegetables,2024,2023/24,1669.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Vegetables,2025,2024/25,1736.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Queensland,Fruit,2021,2020/21,1814.000000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Fruit,2022,2021/22,1605.700000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Fruit,2023,2022/23,1923.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Fruit,2024,2023/24,2042.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Fruit,2025,2024/25,2303.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Vegetables,2021,2020/21,1232.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Vegetables,2022,2021/22,1284.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Vegetables,2023,2022/23,1353.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Vegetables,2024,2023/24,1325.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Vegetables,2025,2024/25,1423.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+South Australia,Fruit,2021,2020/21,434.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Fruit,2022,2021/22,421.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Fruit,2023,2022/23,445.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Fruit,2024,2023/24,438.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Fruit,2025,2024/25,446.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Vegetables,2021,2020/21,673.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Vegetables,2022,2021/22,825.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Vegetables,2023,2022/23,1079.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Vegetables,2024,2023/24,934.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Vegetables,2025,2024/25,988.000000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+Western Australia,Fruit,2021,2020/21,367.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Fruit,2022,2021/22,414.700000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Fruit,2023,2022/23,406.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Fruit,2024,2023/24,605.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Fruit,2025,2024/25,553.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Vegetables,2021,2020/21,383.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Vegetables,2022,2021/22,423.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Vegetables,2023,2022/23,446.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Vegetables,2024,2023/24,424.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Vegetables,2025,2024/25,448.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Tasmania,Fruit,2021,2020/21,234.700000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Fruit,2022,2021/22,219.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Fruit,2023,2022/23,243.000000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Fruit,2024,2023/24,310.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Fruit,2025,2024/25,370.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Vegetables,2021,2020/21,499.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Vegetables,2022,2021/22,556.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Vegetables,2023,2022/23,649.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Vegetables,2024,2023/24,629.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Vegetables,2025,2024/25,678.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Northern Territory,Fruit,2021,2020/21,166.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Fruit,2022,2021/22,166.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Fruit,2023,2022/23,142.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Fruit,2024,2023/24,187.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Fruit,2025,2024/25,199.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Vegetables,2021,2020/21,5.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Vegetables,2022,2021/22,6.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Vegetables,2023,2022/23,6.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Vegetables,2024,2023/24,6.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Vegetables,2025,2024/25,7.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+New South Wales,Nursery,2021,2020/21,836.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Nursery,2022,2021/22,850.000000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Nursery,2023,2022/23,832.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Nursery,2024,2023/24,794.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+New South Wales,Nursery,2025,2024/25,827.000000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.500000,-32.200000,NSW
+Victoria,Nursery,2021,2020/21,781.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Nursery,2022,2021/22,793.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Nursery,2023,2022/23,777.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Nursery,2024,2023/24,741.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Victoria,Nursery,2025,2024/25,772.000000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.900000,-37.400000,VIC
+Queensland,Nursery,2021,2020/21,836.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Nursery,2022,2021/22,849.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Nursery,2023,2022/23,832.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Nursery,2024,2023/24,794.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+Queensland,Nursery,2025,2024/25,827.000000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,144.500000,-22.800000,QLD
+South Australia,Nursery,2021,2020/21,55.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Nursery,2022,2021/22,56.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Nursery,2023,2022/23,55.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Nursery,2024,2023/24,53.000000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+South Australia,Nursery,2025,2024/25,55.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,135.000000,-30.100000,SA
+Western Australia,Nursery,2021,2020/21,223.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Nursery,2022,2021/22,226.700000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Nursery,2023,2022/23,221.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Nursery,2024,2023/24,211.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Western Australia,Nursery,2025,2024/25,220.600000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,122.200000,-25.500000,WA
+Tasmania,Nursery,2021,2020/21,19.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Nursery,2022,2021/22,19.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Nursery,2023,2022/23,19.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Nursery,2024,2023/24,18.500000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Tasmania,Nursery,2025,2024/25,19.200000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,146.700000,-42.000000,TAS
+Northern Territory,Nursery,2021,2020/21,36.300000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Nursery,2022,2021/22,36.800000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Nursery,2023,2022/23,36.100000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Nursery,2024,2023/24,34.400000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT
+Northern Territory,Nursery,2025,2024/25,35.900000,https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/latest-release,133.400000,-19.500000,NT

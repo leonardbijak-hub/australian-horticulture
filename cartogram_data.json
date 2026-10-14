@@ -1,0 +1,317 @@
+[
+  {
+    "state": "New South Wales",
+    "abbr": "NSW",
+    "value_m": 836.8,
+    "year": 2021,
+    "period": "2020/21",
+    "x": 0.8,
+    "y": 0.5485714285714286
+  },
+  {
+    "state": "Victoria",
+    "abbr": "VIC",
+    "value_m": 781.1,
+    "year": 2021,
+    "period": "2020/21",
+    "x": 0.66,
+    "y": 0.7862857142857143
+  },
+  {
+    "state": "Queensland",
+    "abbr": "QLD",
+    "value_m": 836.8,
+    "year": 2021,
+    "period": "2020/21",
+    "x": 0.77,
+    "y": 0.21942857142857142
+  },
+  {
+    "state": "South Australia",
+    "abbr": "SA",
+    "value_m": 55.8,
+    "year": 2021,
+    "period": "2020/21",
+    "x": 0.48,
+    "y": 0.5668571428571428
+  },
+  {
+    "state": "Western Australia",
+    "abbr": "WA",
+    "value_m": 223.2,
+    "year": 2021,
+    "period": "2020/21",
+    "x": 0.17,
+    "y": 0.43885714285714283
+  },
+  {
+    "state": "Tasmania",
+    "abbr": "TAS",
+    "value_m": 19.5,
+    "year": 2021,
+    "period": "2020/21",
+    "x": 0.85,
+    "y": 0.8868571428571428
+  },
+  {
+    "state": "Northern Territory",
+    "abbr": "NT",
+    "value_m": 36.3,
+    "year": 2021,
+    "period": "2020/21",
+    "x": 0.44,
+    "y": 0.18285714285714286
+  },
+  {
+    "state": "New South Wales",
+    "abbr": "NSW",
+    "value_m": 850.0,
+    "year": 2022,
+    "period": "2021/22",
+    "x": 0.8,
+    "y": 0.5485714285714286
+  },
+  {
+    "state": "Victoria",
+    "abbr": "VIC",
+    "value_m": 793.2,
+    "year": 2022,
+    "period": "2021/22",
+    "x": 0.66,
+    "y": 0.7862857142857143
+  },
+  {
+    "state": "Queensland",
+    "abbr": "QLD",
+    "value_m": 849.9,
+    "year": 2022,
+    "period": "2021/22",
+    "x": 0.77,
+    "y": 0.21942857142857142
+  },
+  {
+    "state": "South Australia",
+    "abbr": "SA",
+    "value_m": 56.6,
+    "year": 2022,
+    "period": "2021/22",
+    "x": 0.48,
+    "y": 0.5668571428571428
+  },
+  {
+    "state": "Western Australia",
+    "abbr": "WA",
+    "value_m": 226.7,
+    "year": 2022,
+    "period": "2021/22",
+    "x": 0.17,
+    "y": 0.43885714285714283
+  },
+  {
+    "state": "Tasmania",
+    "abbr": "TAS",
+    "value_m": 19.8,
+    "year": 2022,
+    "period": "2021/22",
+    "x": 0.85,
+    "y": 0.8868571428571428
+  },
+  {
+    "state": "Northern Territory",
+    "abbr": "NT",
+    "value_m": 36.8,
+    "year": 2022,
+    "period": "2021/22",
+    "x": 0.44,
+    "y": 0.18285714285714286
+  },
+  {
+    "state": "New South Wales",
+    "abbr": "NSW",
+    "value_m": 832.8,
+    "year": 2023,
+    "period": "2022/23",
+    "x": 0.8,
+    "y": 0.5485714285714286
+  },
+  {
+    "state": "Victoria",
+    "abbr": "VIC",
+    "value_m": 777.4,
+    "year": 2023,
+    "period": "2022/23",
+    "x": 0.66,
+    "y": 0.7862857142857143
+  },
+  {
+    "state": "Queensland",
+    "abbr": "QLD",
+    "value_m": 832.8,
+    "year": 2023,
+    "period": "2022/23",
+    "x": 0.77,
+    "y": 0.21942857142857142
+  },
+  {
+    "state": "South Australia",
+    "abbr": "SA",
+    "value_m": 55.6,
+    "year": 2023,
+    "period": "2022/23",
+    "x": 0.48,
+    "y": 0.5668571428571428
+  },
+  {
+    "state": "Western Australia",
+    "abbr": "WA",
+    "value_m": 221.2,
+    "year": 2023,
+    "period": "2022/23",
+    "x": 0.17,
+    "y": 0.43885714285714283
+  },
+  {
+    "state": "Tasmania",
+    "abbr": "TAS",
+    "value_m": 19.4,
+    "year": 2023,
+    "period": "2022/23",
+    "x": 0.85,
+    "y": 0.8868571428571428
+  },
+  {
+    "state": "Northern Territory",
+    "abbr": "NT",
+    "value_m": 36.1,
+    "year": 2023,
+    "period": "2022/23",
+    "x": 0.44,
+    "y": 0.18285714285714286
+  },
+  {
+    "state": "New South Wales",
+    "abbr": "NSW",
+    "value_m": 794.3,
+    "year": 2024,
+    "period": "2023/24",
+    "x": 0.8,
+    "y": 0.5485714285714286
+  },
+  {
+    "state": "Victoria",
+    "abbr": "VIC",
+    "value_m": 741.5,
+    "year": 2024,
+    "period": "2023/24",
+    "x": 0.66,
+    "y": 0.7862857142857143
+  },
+  {
+    "state": "Queensland",
+    "abbr": "QLD",
+    "value_m": 794.4,
+    "year": 2024,
+    "period": "2023/24",
+    "x": 0.77,
+    "y": 0.21942857142857142
+  },
+  {
+    "state": "South Australia",
+    "abbr": "SA",
+    "value_m": 53.0,
+    "year": 2024,
+    "period": "2023/24",
+    "x": 0.48,
+    "y": 0.5668571428571428
+  },
+  {
+    "state": "Western Australia",
+    "abbr": "WA",
+    "value_m": 211.9,
+    "year": 2024,
+    "period": "2023/24",
+    "x": 0.17,
+    "y": 0.43885714285714283
+  },
+  {
+    "state": "Tasmania",
+    "abbr": "TAS",
+    "value_m": 18.5,
+    "year": 2024,
+    "period": "2023/24",
+    "x": 0.85,
+    "y": 0.8868571428571428
+  },
+  {
+    "state": "Northern Territory",
+    "abbr": "NT",
+    "value_m": 34.4,
+    "year": 2024,
+    "period": "2023/24",
+    "x": 0.44,
+    "y": 0.18285714285714286
+  },
+  {
+    "state": "New South Wales",
+    "abbr": "NSW",
+    "value_m": 827.0,
+    "year": 2025,
+    "period": "2024/25",
+    "x": 0.8,
+    "y": 0.5485714285714286
+  },
+  {
+    "state": "Victoria",
+    "abbr": "VIC",
+    "value_m": 772.0,
+    "year": 2025,
+    "period": "2024/25",
+    "x": 0.66,
+    "y": 0.7862857142857143
+  },
+  {
+    "state": "Queensland",
+    "abbr": "QLD",
+    "value_m": 827.0,
+    "year": 2025,
+    "period": "2024/25",
+    "x": 0.77,
+    "y": 0.21942857142857142
+  },
+  {
+    "state": "South Australia",
+    "abbr": "SA",
+    "value_m": 55.2,
+    "year": 2025,
+    "period": "2024/25",
+    "x": 0.48,
+    "y": 0.5668571428571428
+  },
+  {
+    "state": "Western Australia",
+    "abbr": "WA",
+    "value_m": 220.6,
+    "year": 2025,
+    "period": "2024/25",
+    "x": 0.17,
+    "y": 0.43885714285714283
+  },
+  {
+    "state": "Tasmania",
+    "abbr": "TAS",
+    "value_m": 19.2,
+    "year": 2025,
+    "period": "2024/25",
+    "x": 0.85,
+    "y": 0.8868571428571428
+  },
+  {
+    "state": "Northern Territory",
+    "abbr": "NT",
+    "value_m": 35.9,
+    "year": 2025,
+    "period": "2024/25",
+    "x": 0.44,
+    "y": 0.18285714285714286
+  }
+]

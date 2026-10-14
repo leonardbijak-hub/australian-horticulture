@@ -1,0 +1,200 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 440,
+  "height": 280,
+  "config": {
+    "background": "transparent",
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titlePadding": 12,
+      "labelColor": "#53615c",
+      "titleColor": "#53615c",
+      "gridColor": "#e3e7e0",
+      "domain": false,
+      "tickColor": "#cbd3cb"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "title": null,
+      "orient": "bottom",
+      "symbolType": "circle"
+    }
+  },
+  "data": {
+    "url": "commodity_year.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.leading==1 && datum.year==2025"
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "zero": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "color": "#b3bdb2"
+      },
+      "encoding": {
+        "x": {
+          "field": "zero",
+          "type": "quantitative",
+          "title": null
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "zero": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "color": "#b3bdb2"
+      },
+      "encoding": {
+        "y": {
+          "field": "zero",
+          "type": "quantitative",
+          "title": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 120,
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "volume_growth",
+          "type": "quantitative",
+          "title": "Change in physical output (%)",
+          "scale": {
+            "domain": [
+              -20,
+              33
+            ]
+          }
+        },
+        "y": {
+          "field": "value_growth",
+          "type": "quantitative",
+          "title": "Change in production value (%)",
+          "scale": {
+            "domain": [
+              -5,
+              30
+            ]
+          }
+        },
+        "color": {
+          "field": "sector",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Fruit",
+              "Vegetables",
+              "Nursery"
+            ],
+            "range": [
+              "#c7652a",
+              "#276f8a",
+              "#527647"
+            ]
+          },
+          "legend": {}
+        },
+        "tooltip": [
+          {
+            "field": "display",
+            "type": "nominal",
+            "title": "Industry"
+          },
+          {
+            "field": "volume_growth",
+            "type": "quantitative",
+            "title": "Output change (%)",
+            "format": "+.1f"
+          },
+          {
+            "field": "value_growth",
+            "type": "quantitative",
+            "title": "Value change (%)",
+            "format": "+.1f"
+          },
+          {
+            "field": "volume_unit",
+            "type": "nominal",
+            "title": "Output measured in"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "commodity",
+            "oneOf": [
+              "Avocados",
+              "Potatoes",
+              "Table grapes",
+              "Nursery"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dx": 8,
+        "dy": -9,
+        "align": "left",
+        "fontSize": 11
+      },
+      "encoding": {
+        "x": {
+          "field": "volume_growth",
+          "type": "quantitative",
+          "title": null
+        },
+        "y": {
+          "field": "value_growth",
+          "type": "quantitative",
+          "title": null
+        },
+        "text": {
+          "field": "display",
+          "type": "nominal",
+          "title": null
+        }
+      }
+    }
+  ]
+}

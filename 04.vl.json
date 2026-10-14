@@ -1,0 +1,199 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 440,
+  "height": 320,
+  "config": {
+    "background": "transparent",
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titlePadding": 12,
+      "labelColor": "#53615c",
+      "titleColor": "#53615c",
+      "gridColor": "#e3e7e0",
+      "domain": false,
+      "tickColor": "#cbd3cb"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "title": null,
+      "orient": "bottom",
+      "symbolType": "circle"
+    }
+  },
+  "padding": {
+    "right": 115
+  },
+  "data": {
+    "url": "commodity_year.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.leading==1"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true,
+        "strokeWidth": 2.2
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "2020/21",
+            "2021/22",
+            "2022/23",
+            "2023/24",
+            "2024/25"
+          ],
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "title": "Rank within the selected ten",
+          "scale": {
+            "domain": [
+              1,
+              10
+            ],
+            "reverse": true
+          },
+          "axis": {
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        "detail": {
+          "field": "commodity",
+          "type": "nominal",
+          "title": null
+        },
+        "color": {
+          "field": "sector",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Fruit",
+              "Vegetables",
+              "Nursery"
+            ],
+            "range": [
+              "#c7652a",
+              "#276f8a",
+              "#527647"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "value": 0.75
+        },
+        "tooltip": [
+          {
+            "field": "display",
+            "type": "nominal",
+            "title": "Industry"
+          },
+          {
+            "field": "period",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Rank",
+            "format": ".0f"
+          },
+          {
+            "field": "value_m",
+            "type": "quantitative",
+            "title": "Production value (AUD million)",
+            "format": ",.1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year==2025"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 9,
+        "fontSize": 11
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "2020/21",
+            "2021/22",
+            "2022/23",
+            "2023/24",
+            "2024/25"
+          ]
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "title": null,
+          "scale": {
+            "reverse": true
+          }
+        },
+        "text": {
+          "field": "display",
+          "type": "nominal",
+          "title": null
+        },
+        "color": {
+          "field": "sector",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Fruit",
+              "Vegetables",
+              "Nursery"
+            ],
+            "range": [
+              "#c7652a",
+              "#276f8a",
+              "#527647"
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ]
+}

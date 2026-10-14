@@ -1,0 +1,125 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 440,
+  "height": 280,
+  "config": {
+    "background": "transparent",
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titlePadding": 12,
+      "labelColor": "#53615c",
+      "titleColor": "#53615c",
+      "gridColor": "#e3e7e0",
+      "domain": false,
+      "tickColor": "#cbd3cb"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "title": null,
+      "orient": "bottom",
+      "symbolType": "circle"
+    }
+  },
+  "data": {
+    "url": "sector_year.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.sector==\"Nursery\""
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#527647",
+        "cornerRadiusTopLeft": 3,
+        "cornerRadiusTopRight": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "2020/21",
+            "2021/22",
+            "2022/23",
+            "2023/24",
+            "2024/25"
+          ],
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "volume",
+          "type": "quantitative",
+          "title": "Million plant units",
+          "scale": {
+            "domain": [
+              0,
+              2550
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "period",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+          {
+            "field": "volume",
+            "type": "quantitative",
+            "title": "Million plant units",
+            "format": ",.0f"
+          },
+          {
+            "field": "volume_growth",
+            "type": "quantitative",
+            "title": "Annual output change (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -8,
+        "fontSize": 12
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "2020/21",
+            "2021/22",
+            "2022/23",
+            "2023/24",
+            "2024/25"
+          ]
+        },
+        "y": {
+          "field": "volume",
+          "type": "quantitative",
+          "title": null
+        },
+        "text": {
+          "field": "volume",
+          "type": "quantitative",
+          "title": null,
+          "format": ",.0f"
+        }
+      }
+    }
+  ]
+}

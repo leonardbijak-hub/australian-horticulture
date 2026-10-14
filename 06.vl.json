@@ -1,0 +1,164 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 440,
+  "height": 330,
+  "config": {
+    "background": "transparent",
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titlePadding": 12,
+      "labelColor": "#53615c",
+      "titleColor": "#53615c",
+      "gridColor": "#e3e7e0",
+      "domain": false,
+      "tickColor": "#cbd3cb"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "title": null,
+      "orient": "bottom",
+      "symbolType": "circle"
+    }
+  },
+  "projection": {
+    "type": "conicEqualArea",
+    "rotate": [
+      -134,
+      0,
+      0
+    ],
+    "parallels": [
+      -18,
+      -36
+    ],
+    "center": [
+      0,
+      -28
+    ]
+  },
+  "params": [
+    {
+      "name": "yieldYear",
+      "value": 2025,
+      "bind": {
+        "input": "select",
+        "options": [
+          2023,
+          2024,
+          2025
+        ],
+        "labels": [
+          "2022/23",
+          "2023/24",
+          "2024/25"
+        ],
+        "name": "Year: "
+      }
+    }
+  ],
+  "data": {
+    "url": "australia.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "states"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "fill": "#dfe4da",
+        "stroke": "white",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "avocado_year.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.year==yieldYear && datum.state!=\"Australia\""
+        },
+        {
+          "lookup": "state",
+          "from": {
+            "data": {
+              "url": "australia.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "states"
+              }
+            },
+            "key": "properties.state"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "yield",
+          "type": "quantitative",
+          "title": "Tonnes / bearing hectare",
+          "scale": {
+            "domain": [
+              0,
+              20
+            ],
+            "range": [
+              "#ebf2f1",
+              "#1b566e"
+            ]
+          },
+          "legend": {
+            "orient": "bottom"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "period",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+          {
+            "field": "production_t",
+            "type": "quantitative",
+            "title": "Production (tonnes)",
+            "format": ",.0f"
+          },
+          {
+            "field": "bearing_ha",
+            "type": "quantitative",
+            "title": "Bearing area (hectares)",
+            "format": ",.1f"
+          },
+          {
+            "field": "yield",
+            "type": "quantitative",
+            "title": "Tonnes per bearing hectare",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 440,
+  "height": 310,
+  "config": {
+    "background": "transparent",
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titlePadding": 12,
+      "labelColor": "#53615c",
+      "titleColor": "#53615c",
+      "gridColor": "#e3e7e0",
+      "domain": false,
+      "tickColor": "#cbd3cb"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "title": null,
+      "orient": "bottom",
+      "symbolType": "circle"
+    }
+  },
+  "data": {
+    "url": "commodity_year.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.leading==1 && datum.year>2021"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "period",
+      "type": "ordinal",
+      "title": null,
+      "sort": [
+        "2021/22",
+        "2022/23",
+        "2023/24",
+        "2024/25"
+      ],
+      "axis": {
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "display",
+      "type": "ordinal",
+      "title": null,
+      "sort": [
+        "Nursery",
+        "Potatoes",
+        "Table grapes",
+        "Bananas",
+        "Avocados",
+        "Salad vegetables",
+        "Apples",
+        "Tomatoes",
+        "Oranges",
+        "Blueberries"
+      ]
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#fbfcf5",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "color": {
+          "field": "value_growth",
+          "type": "quantitative",
+          "title": "Annual change (%)",
+          "scale": {
+            "domain": [
+              -55,
+              0,
+              55
+            ],
+            "range": [
+              "#276f8a",
+              "#f1f1e7",
+              "#bf5922"
+            ]
+          },
+          "legend": {
+            "orient": "bottom"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "display",
+            "type": "nominal",
+            "title": "Industry"
+          },
+          {
+            "field": "period",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+          {
+            "field": "value_growth",
+            "type": "quantitative",
+            "title": "Annual value change (%)",
+            "format": "+.1f"
+          },
+          {
+            "field": "value_m",
+            "type": "quantitative",
+            "title": "Production value (AUD million)",
+            "format": ",.1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {
+          "field": "value_growth",
+          "type": "quantitative",
+          "title": null,
+          "format": "+.0f"
+        },
+        "color": {
+          "condition": {
+            "test": "abs(datum.value_growth)>35",
+            "value": "white"
+          },
+          "value": "#25362f"
+        }
+      }
+    }
+  ]
+}

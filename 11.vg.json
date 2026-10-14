@@ -1,0 +1,221 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 440,
+  "height": 355,
+  "padding": 8,
+  "autosize": "pad",
+  "background": "transparent",
+  "config": {
+    "font": "Arial"
+  },
+  "data": [
+    {
+      "name": "flows",
+      "values": [
+        {
+          "name": "Processing",
+          "tonnes": 990000,
+          "share": 66.27725987045808,
+          "sy": 55,
+          "sy2": 214.06542368909942,
+          "ty": 25,
+          "ty2": 184.06542368909942,
+          "opacity": 0.35
+        },
+        {
+          "name": "Fresh exports",
+          "tonnes": 49858,
+          "share": 3.337829921839696,
+          "sy": 214.06542368909942,
+          "sy2": 222.0762155015147,
+          "ty": 215,
+          "ty2": 223.01079181241528,
+          "opacity": 0.55
+        },
+        {
+          "name": "Domestic fresh supply",
+          "tonnes": 453867,
+          "share": 30.38491020770222,
+          "sy": 222.0762155015147,
+          "sy2": 295.0,
+          "ty": 260,
+          "ty2": 332.92378449848536,
+          "opacity": 0.85
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "path",
+      "from": {
+        "data": "flows"
+      },
+      "encode": {
+        "enter": {
+          "fill": {
+            "value": "#276f8a"
+          },
+          "fillOpacity": {
+            "field": "opacity"
+          },
+          "tooltip": {
+            "signal": "{'Destination':datum.name,'Tonnes':format(datum.tonnes,',.0f'),'Share of production':format(datum.share,'.1f')+'%'}"
+          }
+        },
+        "update": {
+          "path": {
+            "signal": "'M'+width*.10+','+datum.sy+' C'+width*.38+','+datum.sy+' '+width*.43+','+datum.ty+' '+width*.68+','+datum.ty+' L'+width*.68+','+datum.ty2+' C'+width*.43+','+datum.ty2+' '+width*.38+','+datum.sy2+' '+width*.10+','+datum.sy2+' Z'"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "width*.08"
+          },
+          "x2": {
+            "signal": "width*.10"
+          },
+          "y": {
+            "value": 55
+          },
+          "y2": {
+            "value": 295
+          },
+          "fill": {
+            "value": "#276f8a"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "width*.08"
+          },
+          "y": {
+            "value": 325
+          },
+          "text": {
+            "value": "Australian production"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#274137"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "width*.08"
+          },
+          "y": {
+            "value": 343
+          },
+          "text": {
+            "value": "1,493,725 tonnes"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#53615c"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "flows"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "width*.68"
+          },
+          "x2": {
+            "signal": "width*.70"
+          },
+          "y": {
+            "field": "ty"
+          },
+          "y2": {
+            "field": "ty2"
+          },
+          "fill": {
+            "value": "#276f8a"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "flows"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "width*.72"
+          },
+          "y": {
+            "signal": "(datum.ty+datum.ty2)/2-5"
+          },
+          "text": {
+            "field": "name"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#274137"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "flows"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "width*.72"
+          },
+          "y": {
+            "signal": "(datum.ty+datum.ty2)/2+13"
+          },
+          "text": {
+            "signal": "format(datum.tonnes,',.0f')+' t ('+format(datum.share,'.1f')+'%)'"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#53615c"
+          }
+        }
+      }
+    }
+  ]
+}

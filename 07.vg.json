@@ -1,0 +1,153 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 440,
+  "height": 350,
+  "padding": 8,
+  "autosize": "pad",
+  "background": "transparent",
+  "config": {
+    "font": "Arial"
+  },
+  "signals": [
+    {
+      "name": "cartYear",
+      "value": 2025,
+      "bind": {
+        "input": "select",
+        "options": [
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "labels": [
+          "2020/21",
+          "2021/22",
+          "2022/23",
+          "2023/24",
+          "2024/25"
+        ],
+        "name": "Year: "
+      }
+    }
+  ],
+  "data": [
+    {
+      "name": "states",
+      "url": "cartogram_data.json",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.year==cartYear"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "area",
+      "type": "linear",
+      "domain": [
+        0,
+        850
+      ],
+      "range": [
+        0,
+        {
+          "signal": "8168.5*pow(width/500,2)"
+        }
+      ],
+      "zero": true
+    }
+  ],
+  "marks": [
+    {
+      "type": "symbol",
+      "from": {
+        "data": "states"
+      },
+      "encode": {
+        "enter": {
+          "fill": {
+            "value": "#527647"
+          },
+          "fillOpacity": {
+            "value": 0.88
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "value": 2
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "datum.x*width"
+          },
+          "y": {
+            "signal": "datum.y*height"
+          },
+          "size": {
+            "scale": "area",
+            "field": "value_m"
+          },
+          "tooltip": {
+            "signal": "{'State':datum.state,'Financial year':datum.period,'AUD million':format(datum.value_m,',.1f')}"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "states"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x*width"
+          },
+          "y": {
+            "signal": "datum.y*height"
+          },
+          "text": {
+            "field": "abbr"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "signal": "datum.value_m>100 ? 'white' : '#20392d'"
+          },
+          "dy": {
+            "signal": "datum.value_m>100 ? 3 : -15"
+          },
+          "align": {
+            "value": "center"
+          }
+        }
+      }
+    }
+  ],
+  "legends": [
+    {
+      "size": "area",
+      "title": "Production value (AUD million)",
+      "orient": "bottom",
+      "direction": "horizontal",
+      "values": [
+        50,
+        250,
+        800
+      ],
+      "symbolFillColor": "#527647",
+      "titleFontSize": 10,
+      "labelFontSize": 10
+    }
+  ]
+}

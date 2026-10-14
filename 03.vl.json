@@ -1,0 +1,156 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 440,
+  "height": 280,
+  "config": {
+    "background": "transparent",
+    "font": "Arial",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 11,
+      "titlePadding": 12,
+      "labelColor": "#53615c",
+      "titleColor": "#53615c",
+      "gridColor": "#e3e7e0",
+      "domain": false,
+      "tickColor": "#cbd3cb"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "title": null,
+      "orient": "bottom",
+      "symbolType": "circle"
+    }
+  },
+  "data": {
+    "values": [
+      {
+        "sector": "Fruit",
+        "label": "Fruit",
+        "start": 0,
+        "end": 424.59999999999945,
+        "change": 424.59999999999945
+      },
+      {
+        "sector": "Vegetables",
+        "label": "Vegetables",
+        "start": 424.59999999999945,
+        "end": 741.8999999999996,
+        "change": 317.3000000000002
+      },
+      {
+        "sector": "Nursery",
+        "label": "Nursery",
+        "start": 741.8999999999996,
+        "end": 850.8999999999996,
+        "change": 109.0
+      },
+      {
+        "sector": "Total",
+        "label": "Total increase",
+        "start": 0,
+        "end": 850.8999999999996,
+        "change": 850.8999999999996
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "size": 55
+      },
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "Fruit",
+            "Vegetables",
+            "Nursery",
+            "Total increase"
+          ],
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "end",
+          "type": "quantitative",
+          "title": "Increase in production value (AUD million)"
+        },
+        "y2": {
+          "field": "start"
+        },
+        "color": {
+          "field": "sector",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Fruit",
+              "Vegetables",
+              "Nursery",
+              "Total"
+            ],
+            "range": [
+              "#c7652a",
+              "#276f8a",
+              "#527647",
+              "#394e44"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "label",
+            "type": "nominal",
+            "title": "Sector"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "title": "Contribution (AUD million)",
+            "format": ",.1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -9,
+        "fontSize": 12
+      },
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "Fruit",
+            "Vegetables",
+            "Nursery",
+            "Total increase"
+          ]
+        },
+        "y": {
+          "field": "end",
+          "type": "quantitative",
+          "title": null
+        },
+        "text": {
+          "field": "change",
+          "type": "quantitative",
+          "title": null,
+          "format": ",.1f"
+        }
+      }
+    }
+  ]
+}

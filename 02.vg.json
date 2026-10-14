@@ -1,0 +1,171 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 440,
+  "height": 335,
+  "padding": 8,
+  "autosize": "pad",
+  "background": "transparent",
+  "config": {
+    "font": "Arial"
+  },
+  "data": [
+    {
+      "name": "tree",
+      "url": "treemap_data.json",
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "value",
+          "method": "squarify",
+          "ratio": 1.4,
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ],
+          "paddingInner": 3,
+          "paddingOuter": 2,
+          "round": true
+        }
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "!datum.children"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "sector",
+      "type": "ordinal",
+      "domain": [
+        "Fruit",
+        "Vegetables",
+        "Nursery"
+      ],
+      "range": [
+        "#c7652a",
+        "#276f8a",
+        "#527647"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "sector",
+            "field": "sector"
+          },
+          "fillOpacity": {
+            "value": 0.9
+          },
+          "stroke": {
+            "value": "#fafbf5"
+          },
+          "tooltip": {
+            "signal": "{'Industry':datum.name,'Sector':datum.sector,'AUD million':format(datum.value,',.1f'),'Year':'2024/25'}"
+          }
+        },
+        "hover": {
+          "fillOpacity": {
+            "value": 1
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "datum.x0+9"
+          },
+          "y": {
+            "signal": "datum.y0+18"
+          },
+          "text": {
+            "field": "name"
+          },
+          "fill": {
+            "value": "white"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "limit": {
+            "signal": "datum.x1-datum.x0-16"
+          },
+          "opacity": {
+            "signal": "datum.y1-datum.y0>40 ? 1 : 0"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "datum.x0+9"
+          },
+          "y": {
+            "signal": "datum.y0+36"
+          },
+          "text": {
+            "signal": "'$'+format(datum.value/1000,'.2f')+'b'"
+          },
+          "fill": {
+            "value": "white"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "opacity": {
+            "signal": "datum.y1-datum.y0>44 && datum.x1-datum.x0>60 ? 1 : 0"
+          }
+        }
+      }
+    }
+  ]
+}

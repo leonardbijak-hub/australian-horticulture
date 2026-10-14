@@ -1,0 +1,121 @@
+[
+  {
+    "id": "root",
+    "parent": null,
+    "name": "Fruit, vegetables and nursery",
+    "sector": null,
+    "value": 0
+  },
+  {
+    "id": "Fruit",
+    "parent": "root",
+    "name": "Fruit",
+    "sector": "Fruit",
+    "value": 0
+  },
+  {
+    "id": "Fruit:Table grapes",
+    "parent": "Fruit",
+    "name": "Table grapes",
+    "sector": "Fruit",
+    "value": 874.9
+  },
+  {
+    "id": "Fruit:Bananas",
+    "parent": "Fruit",
+    "name": "Bananas",
+    "sector": "Fruit",
+    "value": 719.4
+  },
+  {
+    "id": "Fruit:Avocados",
+    "parent": "Fruit",
+    "name": "Avocados",
+    "sector": "Fruit",
+    "value": 718.7
+  },
+  {
+    "id": "Fruit:Apples",
+    "parent": "Fruit",
+    "name": "Apples",
+    "sector": "Fruit",
+    "value": 672.0
+  },
+  {
+    "id": "Fruit:Oranges",
+    "parent": "Fruit",
+    "name": "Oranges",
+    "sector": "Fruit",
+    "value": 541.8
+  },
+  {
+    "id": "Fruit:rest",
+    "parent": "Fruit",
+    "name": "Remaining fruit",
+    "sector": "Fruit",
+    "value": 3809.5999999999995
+  },
+  {
+    "id": "Vegetables",
+    "parent": "root",
+    "name": "Vegetables",
+    "sector": "Vegetables",
+    "value": 0
+  },
+  {
+    "id": "Vegetables:Potatoes",
+    "parent": "Vegetables",
+    "name": "Potatoes",
+    "sector": "Vegetables",
+    "value": 1212.7
+  },
+  {
+    "id": "Vegetables:Leafy salad vegetables",
+    "parent": "Vegetables",
+    "name": "Salad vegetables",
+    "sector": "Vegetables",
+    "value": 685.3
+  },
+  {
+    "id": "Vegetables:Tomatoes",
+    "parent": "Vegetables",
+    "name": "Tomatoes",
+    "sector": "Vegetables",
+    "value": 639.3
+  },
+  {
+    "id": "Vegetables:Mushrooms",
+    "parent": "Vegetables",
+    "name": "Mushrooms",
+    "sector": "Vegetables",
+    "value": 338.3
+  },
+  {
+    "id": "Vegetables:Parsley and other fresh herbs excluding fennel",
+    "parent": "Vegetables",
+    "name": "Fresh herbs",
+    "sector": "Vegetables",
+    "value": 308.3
+  },
+  {
+    "id": "Vegetables:rest",
+    "parent": "Vegetables",
+    "name": "Remaining vegetables",
+    "sector": "Vegetables",
+    "value": 2847.8999999999996
+  },
+  {
+    "id": "Nursery",
+    "parent": "root",
+    "name": "Nursery",
+    "sector": "Nursery",
+    "value": 0
+  },
+  {
+    "id": "Nursery:Nursery",
+    "parent": "Nursery",
+    "name": "Nursery",
+    "sector": "Nursery",
+    "value": 2757.0
+  }
+]
