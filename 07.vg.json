@@ -3,7 +3,10 @@
   "width": 440,
   "height": 350,
   "padding": 8,
-  "autosize": "pad",
+  "autosize": {
+    "type": "pad",
+    "resize": true
+  },
   "background": "transparent",
   "config": {
     "font": "Arial"
@@ -30,6 +33,18 @@
         ],
         "name": "Year: "
       }
+    },
+    {
+      "name": "legendX",
+      "update": "max(34,width*0.14)"
+    },
+    {
+      "name": "legendBase",
+      "update": "height-10"
+    },
+    {
+      "name": "legendRadius",
+      "update": "sqrt(scale('area',800))/2"
     }
   ],
   "data": [
@@ -40,6 +55,46 @@
         {
           "type": "filter",
           "expr": "datum.year==cartYear"
+        }
+      ]
+    },
+    {
+      "name": "summary",
+      "source": "states",
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "indexof(['NSW','QLD','VIC'],datum.abbr)>=0 ? datum.value_m : 0",
+          "as": "major_value"
+        },
+        {
+          "type": "aggregate",
+          "fields": [
+            "value_m",
+            "major_value"
+          ],
+          "ops": [
+            "sum",
+            "sum"
+          ],
+          "as": [
+            "total",
+            "major"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "referenceSizes",
+      "values": [
+        {
+          "value": 800
+        },
+        {
+          "value": 250
+        },
+        {
+          "value": 50
         }
       ]
     }
@@ -87,7 +142,7 @@
             "signal": "datum.x*width"
           },
           "y": {
-            "signal": "datum.y*height"
+            "signal": "32+datum.y*(height-42)"
           },
           "size": {
             "scale": "area",
@@ -110,7 +165,7 @@
             "signal": "datum.x*width"
           },
           "y": {
-            "signal": "datum.y*height"
+            "signal": "32+datum.y*(height-42)"
           },
           "text": {
             "field": "abbr"
@@ -122,32 +177,179 @@
             "value": "bold"
           },
           "fill": {
-            "signal": "datum.value_m>100 ? 'white' : '#20392d'"
+            "signal": "sqrt(scale('area',datum.value_m))>=42 ? 'white' : '#20392d'"
           },
           "dy": {
-            "signal": "datum.value_m>100 ? 3 : -15"
+            "signal": "sqrt(scale('area',datum.value_m))>=42 ? -5 : -sqrt(scale('area',datum.value_m))/2-20"
           },
           "align": {
             "value": "center"
           }
         }
       }
-    }
-  ],
-  "legends": [
+    },
     {
-      "size": "area",
-      "title": "Production value (AUD million)",
-      "orient": "bottom",
-      "direction": "horizontal",
-      "values": [
-        50,
-        250,
-        800
-      ],
-      "symbolFillColor": "#527647",
-      "titleFontSize": 10,
-      "labelFontSize": 10
+      "type": "text",
+      "from": {
+        "data": "states"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x*width"
+          },
+          "y": {
+            "signal": "32+datum.y*(height-42)"
+          },
+          "text": {
+            "signal": "format(datum.value_m,',.1f')"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "align": {
+            "value": "center"
+          },
+          "fill": {
+            "signal": "sqrt(scale('area',datum.value_m))>=42 ? 'white' : '#53615c'"
+          },
+          "dy": {
+            "signal": "sqrt(scale('area',datum.value_m))>=42 ? 10 : -sqrt(scale('area',datum.value_m))/2-7"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "summary"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "value": 8
+          },
+          "y": {
+            "value": 12
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#20392d"
+          },
+          "text": {
+            "signal": "length(data('states')) ? data('states')[0].period+' \u00b7 Top three: '+format(datum.major/datum.total,'.0%') : ''"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "update": {
+          "x": {
+            "value": 8
+          },
+          "y": {
+            "signal": "legendBase-2*legendRadius-16"
+          },
+          "text": {
+            "value": "AUD million"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "fill": {
+            "value": "#53615c"
+          }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {
+        "data": "referenceSizes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "legendX"
+          },
+          "y": {
+            "signal": "legendBase-sqrt(scale('area',datum.value))/2"
+          },
+          "size": {
+            "scale": "area",
+            "field": "value"
+          },
+          "fill": {
+            "value": "transparent"
+          },
+          "stroke": {
+            "value": "#527647"
+          },
+          "strokeWidth": {
+            "value": 1.2
+          }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {
+        "data": "referenceSizes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "legendX"
+          },
+          "x2": {
+            "signal": "legendX+legendRadius+10"
+          },
+          "y": {
+            "signal": "legendBase-sqrt(scale('area',datum.value))"
+          },
+          "stroke": {
+            "value": "#879a7e"
+          },
+          "strokeWidth": {
+            "value": 0.7
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "referenceSizes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "legendX+legendRadius+14"
+          },
+          "y": {
+            "signal": "legendBase-sqrt(scale('area',datum.value))"
+          },
+          "text": {
+            "signal": "format(datum.value,',.0f')"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fill": {
+            "value": "#53615c"
+          }
+        }
+      }
     }
   ]
 }
