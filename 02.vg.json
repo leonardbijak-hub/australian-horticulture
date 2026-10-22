@@ -50,8 +50,28 @@
         },
         {
           "type": "formula",
-          "expr": "indexof([\"Fruit:Table grapes\", \"Fruit:Bananas\", \"Fruit:Avocados\", \"Fruit:Apples\", \"Fruit:Oranges\", \"Fruit:rest\", \"Vegetables:Potatoes\", \"Vegetables:Leafy salad vegetables\", \"Vegetables:Tomatoes\", \"Vegetables:Mushrooms\", \"Vegetables:Parsley and other fresh herbs excluding fennel\", \"Vegetables:rest\", \"Nursery:Nursery\"], datum.id)+1",
-          "as": "keyNumber"
+          "expr": "split(datum.name, ' ')",
+          "as": "labelLines"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.x1-datum.x0 < 50 && datum.y1-datum.y0 > datum.x1-datum.x0",
+          "as": "rotateLabel"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.rotateLabel ? datum.y1-datum.y0 : datum.x1-datum.x0",
+          "as": "labelWidth"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.rotateLabel ? datum.x1-datum.x0 : datum.y1-datum.y0",
+          "as": "labelHeight"
+        },
+        {
+          "type": "formula",
+          "expr": "min(14, (datum.labelWidth-8)/(0.65*max(length(datum.labelLines[0]),length(datum.labelLines[1] || ''))), (datum.labelHeight-6)/(length(datum.labelLines)*1.2))",
+          "as": "labelFont"
         }
       ]
     }
@@ -121,13 +141,13 @@
       "encode": {
         "update": {
           "x": {
-            "signal": "(datum.x0+datum.x1)/2"
+            "signal": "(datum.x0+datum.x1)/2 - (datum.rotateLabel ? (length(datum.labelLines)-1)*datum.labelFont*0.6 : 0)"
           },
           "y": {
-            "signal": "(datum.y0+datum.y1)/2"
+            "signal": "(datum.y0+datum.y1)/2 - (datum.rotateLabel ? 0 : (length(datum.labelLines)-1)*datum.labelFont*0.6)"
           },
           "text": {
-            "signal": "format(datum.keyNumber,'02d')"
+            "field": "labelLines"
           },
           "align": {
             "value": "center"
@@ -139,13 +159,19 @@
             "value": "white"
           },
           "fontSize": {
-            "value": 16
+            "field": "labelFont"
           },
           "fontWeight": {
             "value": "bold"
           },
           "tooltip": {
             "signal": "{'Industry':datum.name,'Sector':datum.sector,'AUD million':format(datum.value,',.1f'),'Year':'2024/25'}"
+          },
+          "lineHeight": {
+            "signal": "datum.labelFont*1.2"
+          },
+          "angle": {
+            "signal": "datum.rotateLabel ? -90 : 0"
           }
         }
       }

@@ -80,7 +80,7 @@ Values are nominal, not adjusted for inflation, and are not profits. Production 
 ## How: chart rationale
 
 1. **Indexed multi-line chart (basic).** Compare sector trajectories after removing differences in starting scale. The value/output selector answers the central question with consistent units within each series and explains the index baseline.
-2. **Hierarchical treemap (advanced).** Show the composition of production value while distinguishing sector and industry. Rectangle area encodes value; colour encodes sector. A numbered industry key gives complete names and values without hover. Grouped remaining values preserve the full three-sector denominator.
+2. **Hierarchical treemap (advanced).** Show the composition of production value while distinguishing sector and industry. Rectangle area encodes value; colour encodes sector. Industry names are labelled directly inside the rectangles, with wrapping and rotation where needed. A colour-coded list below gives complete names and values without hover. Grouped remaining values preserve the full three-sector denominator.
 3. **Waterfall (advanced).** Attribute the latest combined change to each sector. Floating bar positions show accumulation; bar heights show contribution. Direct labels retain exact AUD million amounts.
 4. **Bump chart (advanced).** Trace ranking changes among a declared, fixed set. Direct labels identify the final industry positions. The text explains that rank differences do not measure value differences.
 5. **Proportional-symbol map (advanced map).** Compare absolute state production values without equating land area and output. Circle area, not radius, encodes value. Sector and year selectors support meaningful regional comparisons.
