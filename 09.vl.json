@@ -31,6 +31,85 @@
   "transform": [
     {
       "filter": "datum.leading==1 && datum.year==2025"
+    },
+    {
+      "lookup": "commodity",
+      "from": {
+        "data": {
+          "values": [
+            {
+              "commodity": "Apples",
+              "label_x": 3,
+              "label_y": -5.5,
+              "label_side": "left"
+            },
+            {
+              "commodity": "Avocados",
+              "label_x": -11.5,
+              "label_y": 23.5,
+              "label_side": "left"
+            },
+            {
+              "commodity": "Bananas",
+              "label_x": -5.3,
+              "label_y": 3,
+              "label_side": "right"
+            },
+            {
+              "commodity": "Blueberries",
+              "label_x": -5.3,
+              "label_y": -1.5,
+              "label_side": "right"
+            },
+            {
+              "commodity": "Leafy salad vegetables",
+              "label_x": 8,
+              "label_y": 0.5,
+              "label_side": "left"
+            },
+            {
+              "commodity": "Nursery",
+              "label_x": 7,
+              "label_y": 6.5,
+              "label_side": "left"
+            },
+            {
+              "commodity": "Oranges",
+              "label_x": 5.5,
+              "label_y": 14.5,
+              "label_side": "left"
+            },
+            {
+              "commodity": "Potatoes",
+              "label_x": -5.3,
+              "label_y": 11,
+              "label_side": "right"
+            },
+            {
+              "commodity": "Table grapes",
+              "label_x": 22.638133,
+              "label_y": 19,
+              "label_side": "center"
+            },
+            {
+              "commodity": "Tomatoes",
+              "label_x": -5.3,
+              "label_y": 7,
+              "label_side": "right"
+            }
+          ]
+        },
+        "key": "commodity",
+        "fields": [
+          "label_x",
+          "label_y",
+          "label_side"
+        ]
+      }
+    },
+    {
+      "calculate": "datum.display=='Salad vegetables' ? 'Salad\\nvegetables' : datum.display",
+      "as": "industry_label"
     }
   ],
   "layer": [
@@ -92,6 +171,30 @@
     },
     {
       "mark": {
+        "type": "rule",
+        "color": "#87958a",
+        "strokeWidth": 0.8,
+        "opacity": 0.8
+      },
+      "encoding": {
+        "x": {
+          "field": "volume_growth",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "value_growth",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "label_x"
+        },
+        "y2": {
+          "field": "label_y"
+        }
+      }
+    },
+    {
+      "mark": {
         "type": "point",
         "filled": true,
         "size": 120,
@@ -105,8 +208,8 @@
           "title": "Physical output change (%)",
           "scale": {
             "domain": [
-              -20,
-              33
+              -24,
+              36
             ]
           },
           "axis": {
@@ -120,7 +223,7 @@
           "title": "Production value change (%)",
           "scale": {
             "domain": [
-              -5,
+              -9,
               30
             ]
           },
@@ -145,7 +248,11 @@
               "#527647"
             ]
           },
-          "legend": {}
+          "legend": {
+            "columns": 3,
+            "columnPadding": 8,
+            "symbolSize": 60
+          }
         },
         "tooltip": [
           {
@@ -176,47 +283,96 @@
     {
       "transform": [
         {
-          "filter": {
-            "field": "commodity",
-            "oneOf": [
-              "Avocados",
-              "Potatoes",
-              "Table grapes",
-              "Nursery"
-            ]
-          }
+          "filter": "datum.label_side=='left'"
         }
       ],
       "mark": {
         "type": "text",
-        "dx": 8,
-        "dy": -9,
         "align": "left",
-        "fontSize": 11
+        "baseline": "middle",
+        "dx": 4,
+        "dy": 0,
+        "fontSize": 11,
+        "color": "#203b2f",
+        "lineBreak": "\n",
+        "lineHeight": 12
       },
       "encoding": {
         "x": {
-          "field": "volume_growth",
-          "type": "quantitative",
-          "title": "Physical output change (%)",
-          "axis": {
-            "title": "Physical output change (%)",
-            "format": ".0f"
-          }
+          "field": "label_x",
+          "type": "quantitative"
         },
         "y": {
-          "field": "value_growth",
-          "type": "quantitative",
-          "title": "Production value change (%)",
-          "axis": {
-            "title": "Production value change (%)",
-            "format": ".0f"
-          }
+          "field": "label_y",
+          "type": "quantitative"
         },
         "text": {
-          "field": "display",
-          "type": "nominal",
-          "title": null
+          "field": "industry_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.label_side=='right'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -4,
+        "dy": 0,
+        "fontSize": 11,
+        "color": "#203b2f",
+        "lineBreak": "\n",
+        "lineHeight": 12
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "industry_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.label_side=='center'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dx": 0,
+        "dy": -4,
+        "fontSize": 11,
+        "color": "#203b2f",
+        "lineBreak": "\n",
+        "lineHeight": 12
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "industry_label",
+          "type": "nominal"
         }
       }
     }
