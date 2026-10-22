@@ -8,7 +8,3 @@ I will use one A4 portrait sheet to sketch the scrolling webpage. At the top, I 
 2. **Geography:** I will use a wide proportional-symbol Australia map with sector/year controls. Below it, I will place the avocado yield choropleth beside the nursery Dorling cartogram, with legends and a short regional comparison.
 3. **Output:** I will place a wide industry-year heatmap above the output/value-change scatterplot and nursery plant-output bar chart. I will mark the zero reference lines and the nursery plant units.
 4. **Markets and industry:** I will place a wide potato Sankey above the export-share waffle and avocado bearing-area/business-count lines, followed by a conclusion and sources.
-
-I will mark the two desktop columns, aligned chart edges, narrative text and source notes. Brief annotations will show the intended takeaways, controls and legends without reproducing the full article text.
-
-After drawing the sheet, I need to photograph or scan it, create a PDF and upload it to the repository. I will check that the sketch and final page agree in topic, section order and visual structure, and seek tutor feedback where possible.
