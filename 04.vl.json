@@ -25,9 +25,6 @@
       "symbolType": "circle"
     }
   },
-  "padding": {
-    "right": 115
-  },
   "data": {
     "url": "commodity_year.csv"
   },
@@ -56,7 +53,13 @@
             "2024/25"
           ],
           "axis": {
-            "labelAngle": 0
+            "labelAngle": {
+              "expr": "compactView ? -45 : 0"
+            },
+            "labelExpr": "compactView ? substring(datum.label,2) : datum.label",
+            "labelFontSize": {
+              "expr": "compactView ? 10 : 11"
+            }
           }
         },
         "y": {
@@ -111,7 +114,17 @@
           "legend": null
         },
         "opacity": {
-          "value": 0.75
+          "condition": [
+            {
+              "test": "industryFocus=='All industries'",
+              "value": 0.75
+            },
+            {
+              "test": "datum.commodity==industryFocus",
+              "value": 1
+            }
+          ],
+          "value": 0.14
         },
         "tooltip": [
           {
@@ -136,20 +149,33 @@
             "title": "Production value (AUD million)",
             "format": ",.1f"
           }
-        ]
+        ],
+        "strokeWidth": {
+          "condition": {
+            "test": "industryFocus!='All industries' && datum.commodity==industryFocus",
+            "value": 4
+          },
+          "value": 2.2
+        }
       }
     },
     {
       "transform": [
         {
           "filter": "datum.year==2025"
+        },
+        {
+          "calculate": "compactView && datum.display=='Salad vegetables' ? 'Salad veg.' : datum.display",
+          "as": "rank_label"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
         "dx": 9,
-        "fontSize": 11
+        "fontSize": {
+          "expr": "compactView ? 10 : 11"
+        }
       },
       "encoding": {
         "x": {
@@ -162,7 +188,16 @@
             "2022/23",
             "2023/24",
             "2024/25"
-          ]
+          ],
+          "axis": {
+            "labelExpr": "compactView ? substring(datum.label,2) : datum.label",
+            "labelFontSize": {
+              "expr": "compactView ? 10 : 11"
+            },
+            "labelAngle": {
+              "expr": "compactView ? -45 : 0"
+            }
+          }
         },
         "y": {
           "field": "rank",
@@ -189,7 +224,7 @@
           }
         },
         "text": {
-          "field": "display",
+          "field": "rank_label",
           "type": "nominal",
           "title": null
         },
@@ -210,6 +245,13 @@
             ]
           },
           "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "test": "industryFocus=='All industries' || datum.commodity==industryFocus",
+            "value": 1
+          },
+          "value": 0.28
         }
       }
     }
@@ -218,5 +260,45 @@
     "type": "fit-x",
     "contains": "padding",
     "resize": true
-  }
+  },
+  "params": [
+    {
+      "name": "industryFocus",
+      "value": "All industries",
+      "bind": {
+        "input": "select",
+        "name": "Industry: ",
+        "options": [
+          "All industries",
+          "Apples",
+          "Avocados",
+          "Bananas",
+          "Blueberries",
+          "Leafy salad vegetables",
+          "Nursery",
+          "Oranges",
+          "Potatoes",
+          "Table grapes",
+          "Tomatoes"
+        ],
+        "labels": [
+          "All industries",
+          "Apples",
+          "Avocados",
+          "Bananas",
+          "Blueberries",
+          "Salad vegetables",
+          "Nursery",
+          "Oranges",
+          "Potatoes",
+          "Table grapes",
+          "Tomatoes"
+        ]
+      }
+    },
+    {
+      "name": "compactView",
+      "value": false
+    }
+  ]
 }

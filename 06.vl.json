@@ -22,7 +22,12 @@
       "labelFontSize": 11,
       "title": null,
       "orient": "bottom",
-      "symbolType": "circle"
+      "symbolType": "circle",
+      "layout": {
+        "bottom": {
+          "direction": "vertical"
+        }
+      }
     }
   },
   "projection": {
@@ -72,10 +77,46 @@
     {
       "mark": {
         "type": "geoshape",
-        "fill": "#dfe4da",
         "stroke": "white",
         "strokeWidth": 1
-      }
+      },
+      "encoding": {
+        "color": {
+          "datum": "No estimate",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "No estimate"
+            ],
+            "range": [
+              "#dfe4da"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "symbolType": "square"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "availability",
+            "type": "nominal",
+            "title": "Availability"
+          }
+        ]
+      },
+      "transform": [
+        {
+          "calculate": "'No estimate available'",
+          "as": "availability"
+        }
+      ]
     },
     {
       "data": {
@@ -84,6 +125,9 @@
       "transform": [
         {
           "filter": "datum.year==yieldYear && datum.state!=\"Australia\""
+        },
+        {
+          "filter": "isValid(datum.yield)"
         },
         {
           "lookup": "state",
@@ -125,7 +169,11 @@
             ]
           },
           "legend": {
-            "orient": "bottom"
+            "orient": "bottom",
+            "titleLimit": 300,
+            "gradientLength": {
+              "expr": "min(220,width-20)"
+            }
           }
         },
         "tooltip": [
@@ -237,5 +285,10 @@
     "type": "fit-x",
     "contains": "padding",
     "resize": true
+  },
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
   }
 }

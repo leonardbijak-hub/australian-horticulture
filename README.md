@@ -26,7 +26,7 @@ Serve this directory over HTTP, or enable GitHub Pages using the `main` branch a
 
 ## Validation
 
-I checked all 13 specifications by compiling and rendering them to SVG with the prepared data. I also checked the value/output, state/year, yield/year and cartogram/year controls. The three-sector treemap totals $16,125.2m, and the potato production flows balance exactly. The map geometry was checked after simplification, including degenerate rings and spherical winding.
+I checked all 13 specifications by compiling and rendering them to SVG with the prepared data at desktop, tablet and two mobile widths (52 renders). I also checked every value/output, industry, state/year, yield/year and cartogram/year option (116 control states), plus application loading, shared data caching and four resize transitions. Resizing retains the selected industry. The three-sector treemap totals $16,125.2m, and both stages of the potato production flows balance exactly on one tonnes-to-thickness scale. The map geometry was checked after simplification, including degenerate rings and spherical winding. These checks cover chart rendering and application logic; they do not replace a full browser layout review.
 
 I have linked the original PDFs and spreadsheets in METHODS.md. The source datasets retain their publishers' conditions, and the repository includes the third-party software licences.
 

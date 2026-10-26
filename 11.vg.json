@@ -1,230 +1,424 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "width": 440,
-  "height": 355,
+  "description": "Australian potato production flows to processing, fresh exports and domestic fresh supply; domestic fresh supply then divides into retail and food service. Every ribbon uses the same tonnes-to-thickness scale.",
+  "width": 960,
+  "height": 500,
   "padding": 8,
-  "autosize": "pad",
+  "autosize": {
+    "type": "pad",
+    "resize": true
+  },
   "background": "transparent",
   "config": {
     "font": "Arial"
   },
+  "signals": [
+    {
+      "name": "compact",
+      "update": "width<600"
+    },
+    {
+      "name": "productionTotal",
+      "update": "data('production')[0].total"
+    },
+    {
+      "name": "tonneScale",
+      "update": "240/productionTotal"
+    },
+    {
+      "name": "nodeWidth",
+      "value": 14
+    },
+    {
+      "name": "middleX",
+      "update": "width*0.48-7"
+    },
+    {
+      "name": "flowEnd",
+      "update": "width-22"
+    }
+  ],
   "data": [
+    {
+      "name": "supply",
+      "url": "potato_supply.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "tonnes": "number"
+        }
+      }
+    },
+    {
+      "name": "production",
+      "source": "supply",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.flow=='Processing' || datum.flow=='Fresh exports' || datum.flow=='Domestic fresh supply'"
+        },
+        {
+          "type": "aggregate",
+          "fields": [
+            "tonnes"
+          ],
+          "ops": [
+            "sum"
+          ],
+          "as": [
+            "total"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nodes",
+      "values": [
+        {
+          "id": "production",
+          "name": "Australian production",
+          "label": [
+            "Australian",
+            "production"
+          ],
+          "stage": 0,
+          "tone": 1
+        },
+        {
+          "id": "processing",
+          "name": "Processing",
+          "label": [
+            "Processing"
+          ],
+          "stage": 1,
+          "tone": 0.42
+        },
+        {
+          "id": "exports",
+          "name": "Fresh exports",
+          "label": [
+            "Fresh exports"
+          ],
+          "stage": 1,
+          "tone": 0.65
+        },
+        {
+          "id": "domestic",
+          "name": "Domestic fresh supply",
+          "label": [
+            "Domestic fresh",
+            "supply"
+          ],
+          "stage": 1,
+          "tone": 0.9
+        },
+        {
+          "id": "retail",
+          "name": "Retail",
+          "label": [
+            "Retail"
+          ],
+          "stage": 2,
+          "tone": 0.9
+        },
+        {
+          "id": "food",
+          "name": "Food service",
+          "label": [
+            "Food service"
+          ],
+          "stage": 2,
+          "tone": 0.65
+        }
+      ],
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "supply",
+          "key": "flow",
+          "fields": [
+            "name"
+          ],
+          "values": [
+            "tonnes"
+          ],
+          "as": [
+            "reported_tonnes"
+          ]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.id=='production' ? productionTotal : datum.reported_tonnes",
+          "as": "tonnes"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.stage==0 ? 16 : datum.stage==1 ? middleX : flowEnd",
+          "as": "x"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.id=='production' ? (compact ? 135 : 110) : datum.id=='processing' ? 60 : datum.id=='exports' ? (compact ? 290 : 280) : datum.id=='domestic' ? (compact ? 390 : 354) : datum.id=='retail' ? (compact ? 495 : 330) : (compact ? 615 : 460)",
+          "as": "y"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.tonnes*tonneScale",
+          "as": "thickness"
+        }
+      ]
+    },
     {
       "name": "flows",
       "values": [
         {
-          "name": "Processing",
-          "tonnes": 990000,
-          "share": 66.27725987045808,
-          "sy": 55,
-          "sy2": 214.06542368909942,
-          "ty": 25,
-          "ty2": 184.06542368909942,
-          "opacity": 0.35
+          "source": "production",
+          "target": "processing",
+          "order": 0
         },
         {
-          "name": "Fresh exports",
-          "tonnes": 49858,
-          "share": 3.337829921839696,
-          "sy": 214.06542368909942,
-          "sy2": 222.0762155015147,
-          "ty": 215,
-          "ty2": 223.01079181241528,
-          "opacity": 0.55
+          "source": "production",
+          "target": "exports",
+          "order": 1
         },
         {
-          "name": "Domestic fresh supply",
-          "tonnes": 453867,
-          "share": 30.38491020770222,
-          "sy": 222.0762155015147,
-          "sy2": 295.0,
-          "ty": 260,
-          "ty2": 332.92378449848536,
-          "opacity": 0.85
+          "source": "production",
+          "target": "domestic",
+          "order": 2
+        },
+        {
+          "source": "domestic",
+          "target": "retail",
+          "order": 3
+        },
+        {
+          "source": "domestic",
+          "target": "food",
+          "order": 4
+        }
+      ],
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "nodes",
+          "key": "id",
+          "fields": [
+            "source"
+          ],
+          "values": [
+            "x",
+            "y",
+            "tonnes",
+            "name"
+          ],
+          "as": [
+            "source_x",
+            "source_y",
+            "source_tonnes",
+            "source_name"
+          ]
+        },
+        {
+          "type": "lookup",
+          "from": "nodes",
+          "key": "id",
+          "fields": [
+            "target"
+          ],
+          "values": [
+            "x",
+            "y",
+            "tonnes",
+            "name",
+            "tone"
+          ],
+          "as": [
+            "target_x",
+            "target_y",
+            "tonnes",
+            "target_name",
+            "tone"
+          ]
+        },
+        {
+          "type": "stack",
+          "groupby": [
+            "source"
+          ],
+          "field": "tonnes",
+          "sort": {
+            "field": "order",
+            "order": "ascending"
+          },
+          "as": [
+            "source_offset",
+            "source_end"
+          ]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.source_x+nodeWidth",
+          "as": "sx"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.source_y+datum.source_offset*tonneScale",
+          "as": "sy"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.target_x",
+          "as": "tx"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.target_y",
+          "as": "ty"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.tonnes*tonneScale",
+          "as": "thickness"
         }
       ]
     }
   ],
   "marks": [
     {
+      "name": "ribbons",
       "type": "path",
       "from": {
         "data": "flows"
       },
       "encode": {
-        "enter": {
+        "update": {
+          "path": {
+            "signal": "'M'+datum.sx+','+datum.sy+' C'+(datum.sx+(datum.tx-datum.sx)*0.45)+','+datum.sy+' '+(datum.sx+(datum.tx-datum.sx)*0.55)+','+datum.ty+' '+datum.tx+','+datum.ty+' L'+datum.tx+','+(datum.ty+datum.thickness)+' C'+(datum.sx+(datum.tx-datum.sx)*0.55)+','+(datum.ty+datum.thickness)+' '+(datum.sx+(datum.tx-datum.sx)*0.45)+','+(datum.sy+datum.thickness)+' '+datum.sx+','+(datum.sy+datum.thickness)+' Z'"
+          },
           "fill": {
             "value": "#276f8a"
           },
           "fillOpacity": {
-            "field": "opacity"
+            "signal": "datum.tone*0.65"
           },
           "tooltip": {
-            "signal": "{'Destination':datum.name,'Tonnes':format(datum.tonnes,',.0f'),'Share of production':format(datum.share,'.1f')+'%'}"
+            "signal": "{'From':datum.source_name,'To':datum.target_name,'Tonnes':format(datum.tonnes,',.0f'),'Share of source':format(datum.tonnes/datum.source_tonnes,'.1%'),'Share of total production':format(datum.tonnes/productionTotal,'.1%')} "
           }
         },
-        "update": {
-          "path": {
-            "signal": "'M'+width*.10+','+datum.sy+' C'+(width*.10+(flowEnd-width*.10)*.45)+','+datum.sy+' '+(width*.10+(flowEnd-width*.10)*.55)+','+datum.ty+' '+flowEnd+','+datum.ty+' L'+flowEnd+','+datum.ty2+' C'+(width*.10+(flowEnd-width*.10)*.55)+','+datum.ty2+' '+(width*.10+(flowEnd-width*.10)*.45)+','+datum.sy2+' '+width*.10+','+datum.sy2+' Z'"
+        "hover": {
+          "fillOpacity": {
+            "value": 0.85
           }
         }
       }
     },
     {
-      "type": "rect",
-      "encode": {
-        "update": {
-          "x": {
-            "signal": "width*.08"
-          },
-          "x2": {
-            "signal": "width*.10"
-          },
-          "y": {
-            "value": 55
-          },
-          "y2": {
-            "value": 295
-          },
-          "fill": {
-            "value": "#276f8a"
-          }
-        }
-      }
-    },
-    {
-      "type": "text",
-      "encode": {
-        "update": {
-          "x": {
-            "signal": "width*.08"
-          },
-          "y": {
-            "value": 325
-          },
-          "text": {
-            "value": "Australian production"
-          },
-          "fontSize": {
-            "value": 12
-          },
-          "fontWeight": {
-            "value": "bold"
-          },
-          "fill": {
-            "value": "#274137"
-          }
-        }
-      }
-    },
-    {
-      "type": "text",
-      "encode": {
-        "update": {
-          "x": {
-            "signal": "width*.08"
-          },
-          "y": {
-            "value": 343
-          },
-          "text": {
-            "value": "1,493,725 tonnes"
-          },
-          "fontSize": {
-            "value": 11
-          },
-          "fill": {
-            "value": "#53615c"
-          }
-        }
-      }
-    },
-    {
+      "name": "destinationNodes",
       "type": "rect",
       "from": {
-        "data": "flows"
+        "data": "nodes"
       },
       "encode": {
         "update": {
           "x": {
-            "signal": "flowEnd"
+            "field": "x"
           },
           "x2": {
-            "signal": "flowEnd+16"
+            "signal": "datum.x+nodeWidth"
           },
           "y": {
-            "field": "ty"
+            "field": "y"
           },
           "y2": {
-            "field": "ty2"
+            "signal": "datum.y+datum.thickness"
           },
           "fill": {
             "value": "#276f8a"
+          },
+          "fillOpacity": {
+            "field": "tone"
+          },
+          "tooltip": {
+            "signal": "{'Destination':datum.name,'Tonnes':format(datum.tonnes,',.0f'),'Share of total production':format(datum.tonnes/productionTotal,'.1%')}"
           }
         }
       }
     },
     {
+      "name": "nodeLabels",
       "type": "text",
       "from": {
-        "data": "flows"
+        "data": "nodes"
       },
       "encode": {
         "update": {
           "x": {
-            "signal": "flowEnd+24"
+            "signal": "datum.stage==0 ? datum.x : datum.stage==1 ? datum.x+nodeWidth/2 : datum.x+nodeWidth"
           },
           "y": {
-            "signal": "(datum.ty+datum.ty2)/2-13"
+            "signal": "datum.y-18-length(datum.label)*14"
+          },
+          "align": {
+            "signal": "datum.stage==0 ? 'left' : datum.stage==1 ? 'center' : 'right'"
           },
           "text": {
-            "signal": "datum.name=='Domestic fresh supply' ? ['Domestic fresh','supply'] : datum.name"
+            "field": "label"
           },
           "fontSize": {
             "value": 12
-          },
-          "fontWeight": {
-            "value": "bold"
-          },
-          "fill": {
-            "value": "#274137"
           },
           "lineHeight": {
             "value": 14
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#203b2f"
+          },
+          "stroke": {
+            "value": "#fbfcf6"
+          },
+          "strokeWidth": {
+            "value": 3
           }
         }
       }
     },
     {
+      "name": "nodeValues",
       "type": "text",
       "from": {
-        "data": "flows"
+        "data": "nodes"
       },
       "encode": {
         "update": {
           "x": {
-            "signal": "flowEnd+24"
+            "signal": "datum.stage==0 ? datum.x : datum.stage==1 ? datum.x+nodeWidth/2 : datum.x+nodeWidth"
           },
           "y": {
-            "signal": "(datum.ty+datum.ty2)/2+17"
+            "signal": "datum.y-16"
+          },
+          "align": {
+            "signal": "datum.stage==0 ? 'left' : datum.stage==1 ? 'center' : 'right'"
           },
           "text": {
-            "signal": "format(datum.tonnes,',.0f')+' t ('+format(datum.share,'.1f')+'%)'"
+            "signal": "format(datum.tonnes,',.0f')+' t'"
           },
           "fontSize": {
             "value": 11
           },
           "fill": {
             "value": "#53615c"
+          },
+          "stroke": {
+            "value": "#fbfcf6"
+          },
+          "strokeWidth": {
+            "value": 3
           }
         }
       }
-    }
-  ],
-  "signals": [
-    {
-      "name": "flowEnd",
-      "update": "max(width*0.35,width-195)"
     }
   ]
 }

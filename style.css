@@ -6,3 +6,5 @@
 .treemap-key{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px}.treemap-key li{display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:baseline;gap:7px;font-size:11px;line-height:1.35}.treemap-code{color:var(--key-color);font-weight:bold}.treemap-key strong{font-weight:normal;color:var(--muted);white-space:nowrap}.chart-note{overflow-wrap:anywhere}
 
 @media(max-width:520px){.treemap-key{grid-template-columns:minmax(0,1fr)}}
+
+#c04 .vega-embed{display:flex;flex-direction:column}#c04 .vega-bindings{order:-1;padding:0 0 12px}#c04 .vega-bind select{max-width:230px}#c11 text{paint-order:stroke;stroke-linejoin:round}

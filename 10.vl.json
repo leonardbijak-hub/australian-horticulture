@@ -54,7 +54,11 @@
             "2024/25"
           ],
           "axis": {
-            "labelAngle": 0
+            "labelAngle": 0,
+            "labelExpr": "compactView ? substring(datum.label,2) : datum.label",
+            "labelFontSize": {
+              "expr": "compactView ? 10 : 11"
+            }
           }
         },
         "y": {
@@ -96,7 +100,9 @@
       "mark": {
         "type": "text",
         "dy": -8,
-        "fontSize": 12
+        "fontSize": {
+          "expr": "compactView ? 10 : 12"
+        }
       },
       "encoding": {
         "x": {
@@ -109,7 +115,13 @@
             "2022/23",
             "2023/24",
             "2024/25"
-          ]
+          ],
+          "axis": {
+            "labelExpr": "compactView ? substring(datum.label,2) : datum.label",
+            "labelFontSize": {
+              "expr": "compactView ? 10 : 11"
+            }
+          }
         },
         "y": {
           "field": "volume",
@@ -126,11 +138,68 @@
           "format": ",.0f"
         }
       }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year==2024 || datum.year==2025"
+        },
+        {
+          "calculate": "datum.year==2024 ? 'Trough' : (compactView ? 'Up\\n' : 'Recovery\\n')+format(datum.volume_growth,'+.1f')+'%'",
+          "as": "annotation"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "baseline": "top",
+        "dy": 12,
+        "fontSize": {
+          "expr": "compactView ? 9 : 11"
+        },
+        "fontWeight": "bold",
+        "color": "white",
+        "lineBreak": "\n",
+        "lineHeight": 14
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": null,
+          "sort": [
+            "2020/21",
+            "2021/22",
+            "2022/23",
+            "2023/24",
+            "2024/25"
+          ],
+          "axis": {
+            "labelExpr": "compactView ? substring(datum.label,2) : datum.label",
+            "labelFontSize": {
+              "expr": "compactView ? 10 : 11"
+            }
+          }
+        },
+        "y": {
+          "field": "volume",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "nominal"
+        }
+      }
     }
   ],
   "autosize": {
     "type": "fit-x",
     "contains": "padding",
     "resize": true
-  }
+  },
+  "params": [
+    {
+      "name": "compactView",
+      "value": false
+    }
+  ]
 }
