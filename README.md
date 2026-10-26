@@ -13,6 +13,7 @@ I organised the story into four sections: growth, geography, output, and markets
 ## Files
 
 - `index.html`, `style.css`, `app.js`: the scrolling webpage.
+- `text-layout.js`: wraps webpage text at ten words or 60 characters, whichever limit is reached first, while preserving inline formatting and links. Narrow screens can wrap those lines further.
 - `01.vl.json` to `13.vl.json` / `*.vg.json`: individual, human-readable Vega or Vega-Lite specifications.
 - CSV and JSON files: prepared chart data, with original units and sources.
 - `australia.topojson`: simplified ABS ASGS Edition 3 state boundaries.

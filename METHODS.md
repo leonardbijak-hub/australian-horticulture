@@ -99,6 +99,8 @@ There are 13 charts and nine distinct advanced idioms, including three different
 
 I organised the scrolling page into four narrative sections with responsive columns, direct takeaways and a closing synthesis. Controls update individual charts, while the main story stays visible without interaction. I use consistent sector colours and a separate diverging legend for the heatmap. Headings use Georgia, a serif font; body text and chart labels use sans-serif fonts. I included focus styles, semantic headings, chart descriptions and reduced-motion support.
 
+I limit each text line to ten words or 60 characters, whichever is reached first. The layout script counts both limits and inserts line breaks without rewriting my text or replacing its links and emphasis. Existing heading breaks remain in place, and narrower screens can wrap the resulting lines further. This rule also applies to sources and footer text.
+
 The page locally hosts version-pinned Vega libraries and reuses data loads. Prepared data and specifications total well below a few megabytes. There are no original third-party graphics, stock photographs or copied dashboards.
 
 Leo · 14 October 2026. I used ChatGPT/Codex to assist with research, data preparation, writing, coding and verification. My remaining submission tasks are recorded in the README.

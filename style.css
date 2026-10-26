@@ -8,3 +8,5 @@
 @media(max-width:520px){.treemap-key{grid-template-columns:minmax(0,1fr)}}
 
 #c04 .vega-embed{display:flex;flex-direction:column}#c04 .vega-bindings{order:-1;padding:0 0 12px}#c04 .vega-bind select{max-width:230px}#c11 text{paint-order:stroke;stroke-linejoin:round}
+
+[data-line-limits]{overflow-wrap:anywhere}
