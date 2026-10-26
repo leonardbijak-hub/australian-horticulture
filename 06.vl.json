@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 440,
-  "height": 330,
+  "height": 370,
   "config": {
     "background": "transparent",
-    "font": "Arial",
+    "font": "Source Sans 3",
     "view": {
       "stroke": null
     },
@@ -160,20 +160,28 @@
           "title": "Tonnes / bearing hectare",
           "scale": {
             "domain": [
-              0,
-              20
+              3,
+              15
             ],
             "range": [
-              "#ebf2f1",
-              "#1b566e"
-            ]
+              "#fff1dc",
+              "#a3481c"
+            ],
+            "nice": false
           },
           "legend": {
             "orient": "bottom",
             "titleLimit": 300,
             "gradientLength": {
               "expr": "min(220,width-20)"
-            }
+            },
+            "values": [
+              3,
+              6,
+              9,
+              12,
+              15
+            ]
           }
         },
         "tooltip": [

@@ -10,7 +10,18 @@
   },
   "background": "transparent",
   "config": {
-    "font": "Arial"
+    "font": "Source Sans 3",
+    "text": {
+      "font": "Source Sans 3"
+    },
+    "axis": {
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    },
+    "legend": {
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    }
   },
   "signals": [
     {

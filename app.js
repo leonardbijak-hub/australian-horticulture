@@ -1,6 +1,11 @@
 'use strict';
 (async function(){
-  const assetVersion='20261026-critique-updates';
+  if(document.fonts){
+    await Promise.all([document.fonts.load('400 16px "Source Sans 3"'),document.fonts.load('400 32px "Fraunces"')]);
+    await document.fonts.ready;
+  }
+  window.horticultureTextLayout?.wrap();
+  const assetVersion='20261027-hd-polish';
   const fileNames=['01.vl.json','02.vg.json','03.vl.json','04.vl.json','05.vl.json','06.vl.json','07.vg.json','08.vl.json','09.vl.json','10.vl.json','11.vg.json','12.vl.json','13.vl.json'];
   const cache=new Map(),loader=vega.loader({baseURL:new URL('.',document.baseURI).href});
   const originalLoad=loader.load.bind(loader);
@@ -9,7 +14,11 @@
   function dimensions(el,native,index){
     const width=Math.max(180,el.clientWidth-(native?16:0));
     let height;
-    if(index===6)height=Math.round(width*.78);
+    if(index===6)height=Math.round(width*.84);
+    if(index===0)height=width>=420?400:280;
+    if(index===2)height=width>=420?360:280;
+    if(index===5)height=width>=420?370:300;
+    if(index===9)height=width>=420?320:280;
     if(index===4)height=Math.min(440,Math.round(width*.51));
     if(index===10)height=width<600?650:500;
     if(index===11)height=Math.round((width-10)/2);
@@ -39,6 +48,7 @@
   let timer;
   window.addEventListener('resize',()=>{
     clearTimeout(timer);timer=setTimeout(()=>{
+      window.horticultureTextLayout?.wrap();
       for(const r of results){
         const size=dimensions(r.el,r.native,r.index);
         if(r.responsive)r.view.signal('compactView',size.width<420);

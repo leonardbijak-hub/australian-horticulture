@@ -4,7 +4,7 @@
   "height": 320,
   "config": {
     "background": "transparent",
-    "font": "Arial",
+    "font": "Source Sans 3",
     "view": {
       "stroke": null
     },
@@ -37,8 +37,7 @@
     {
       "mark": {
         "type": "line",
-        "point": true,
-        "strokeWidth": 2.2
+        "point": true
       },
       "encoding": {
         "x": {

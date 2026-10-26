@@ -88,3 +88,9 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Fraunces and Source Sans 3
+Font sources: https://fonts.google.com/specimen/Fraunces and https://github.com/adobe-fonts/source-sans
+Self-hosted Latin font files are distributed under the SIL Open Font License 1.1.
+See fonts/Fraunces-OFL.txt and fonts/SourceSans3-OFL.txt for the complete notices.

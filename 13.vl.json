@@ -4,7 +4,7 @@
   "height": 280,
   "config": {
     "background": "transparent",
-    "font": "Arial",
+    "font": "Source Sans 3",
     "view": {
       "stroke": null
     },
@@ -147,8 +147,8 @@
               "Grower businesses"
             ],
             "range": [
-              "#276f8a",
-              "#6c765d"
+              "#c7652a",
+              "#7a3e22"
             ]
           },
           "legend": {
@@ -178,7 +178,30 @@
             "title": "Index",
             "format": ".1f"
           }
-        ]
+        ],
+        "strokeDash": {
+          "field": "measure",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Bearing area",
+              "Grower businesses"
+            ],
+            "range": [
+              [
+                1,
+                0
+              ],
+              [
+                6,
+                3
+              ]
+            ]
+          },
+          "legend": {
+            "orient": "bottom"
+          }
+        }
       }
     }
   ],

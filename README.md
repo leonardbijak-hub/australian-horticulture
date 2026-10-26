@@ -1,4 +1,4 @@
-# Grown Unevenly
+# Australia’s Changing Harvest
 
 My FIT3179 Data Visualisation 2 project explores Australia's fruit, vegetable and nursery industries. I use production value, physical output and regional data to investigate how the industry changed between 2020/21 and 2024/25.
 
@@ -13,6 +13,8 @@ I organised the story into four sections: growth, geography, output, and markets
 ## Files
 
 - `index.html`, `style.css`, `app.js`: the scrolling webpage.
+- `fonts/`: self-hosted Fraunces and Source Sans 3, with their licences.
+- `scripts/build_cartogram.py`: reproducible Dorling circle displacement without changing published values.
 - `text-layout.js`: wraps webpage text at ten words or 60 characters, whichever limit is reached first, while preserving inline formatting and links. Narrow screens can wrap those lines further.
 - `01.vl.json` to `13.vl.json` / `*.vg.json`: individual, human-readable Vega or Vega-Lite specifications.
 - CSV and JSON files: prepared chart data, with original units and sources.
@@ -27,7 +29,7 @@ Serve this directory over HTTP, or enable GitHub Pages using the `main` branch a
 
 ## Validation
 
-I checked all 13 specifications by compiling and rendering them to SVG with the prepared data at desktop, tablet and two mobile widths (52 renders). I also checked every value/output, industry, state/year, yield/year and cartogram/year option (116 control states), plus application loading, shared data caching and four resize transitions. Resizing retains the selected industry. The three-sector treemap totals $16,125.2m, and both stages of the potato production flows balance exactly on one tonnes-to-thickness scale. The map geometry was checked after simplification, including degenerate rings and spherical winding. These checks cover chart rendering and application logic; they do not replace a full browser layout review.
+I checked all 13 specifications by compiling and rendering them to SVG with the prepared data at desktop, tablet and two mobile widths (52 renders). I also checked every value/output, industry, state/year, yield/year and cartogram/year option (116 control states), plus application loading, shared data caching and four resize transitions. Resizing retains the selected industry. The three-sector treemap totals $16,125.2m, and both stages of the potato production flows balance exactly on one tonnes-to-thickness scale. The map geometry was checked after simplification, including degenerate rings and spherical winding. I also checked the full page at 320, 375, 768, 1024, 1280 and 1366 pixel widths: both fonts loaded, all charts loaded, text stayed within the word/character limits, and neither the page nor its charts overflowed horizontally. I exercised the industry selector and every map year in the browser.
 
 I have linked the original PDFs and spreadsheets in METHODS.md. The source datasets retain their publishers' conditions, and the repository includes the third-party software licences.
 

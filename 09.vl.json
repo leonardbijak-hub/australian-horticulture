@@ -4,7 +4,7 @@
   "height": 280,
   "config": {
     "background": "transparent",
-    "font": "Arial",
+    "font": "Source Sans 3",
     "view": {
       "stroke": null
     },
@@ -136,7 +136,16 @@
           "title": "Physical output change (%)",
           "axis": {
             "title": "Physical output change (%)",
-            "format": ".0f"
+            "format": ".0f",
+            "values": [
+              -20,
+              -10,
+              0,
+              10,
+              20,
+              30
+            ],
+            "labelOverlap": false
           }
         }
       }
@@ -210,11 +219,21 @@
             "domain": [
               -24,
               36
-            ]
+            ],
+            "nice": false
           },
           "axis": {
             "title": "Physical output change (%)",
-            "format": ".0f"
+            "format": ".0f",
+            "values": [
+              -20,
+              -10,
+              0,
+              10,
+              20,
+              30
+            ],
+            "labelOverlap": false
           }
         },
         "y": {

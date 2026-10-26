@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "width": 440,
-  "height": 350,
+  "height": 420,
   "padding": 8,
   "autosize": {
     "type": "pad",
@@ -9,7 +9,18 @@
   },
   "background": "transparent",
   "config": {
-    "font": "Arial"
+    "font": "Source Sans 3",
+    "text": {
+      "font": "Source Sans 3"
+    },
+    "axis": {
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    },
+    "legend": {
+      "labelFont": "Source Sans 3",
+      "titleFont": "Source Sans 3"
+    }
   },
   "signals": [
     {
@@ -66,7 +77,7 @@
       "range": [
         0,
         {
-          "signal": "8168.5*pow(width/500,2)"
+          "signal": "4*pow(85*width/500,2)"
         }
       ],
       "zero": true
@@ -74,30 +85,74 @@
   ],
   "marks": [
     {
-      "name": "referenceMap",
-      "type": "shape",
-      "from": {
-        "data": "geography"
-      },
-      "transform": [
-        {
-          "type": "geoshape",
-          "projection": "australia"
-        }
-      ],
+      "name": "geographicContext",
+      "type": "group",
       "encode": {
         "update": {
-          "fill": {
-            "value": "#e3e8df"
+          "x": {
+            "value": 4
           },
-          "stroke": {
-            "value": "white"
-          },
-          "strokeWidth": {
-            "value": 1
+          "y": {
+            "signal": "height-width*0.20-10"
           }
         }
-      }
+      },
+      "marks": [
+        {
+          "name": "referenceMap",
+          "type": "shape",
+          "from": {
+            "data": "geography"
+          },
+          "transform": [
+            {
+              "type": "geoshape",
+              "projection": "australia"
+            }
+          ],
+          "encode": {
+            "update": {
+              "fill": {
+                "value": "#e3e8df"
+              },
+              "stroke": {
+                "value": "white"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "encode": {
+            "update": {
+              "x": {
+                "value": 0
+              },
+              "y": {
+                "value": -22
+              },
+              "text": {
+                "value": [
+                  "Geographic",
+                  "reference"
+                ]
+              },
+              "lineHeight": {
+                "value": 10
+              },
+              "fontSize": {
+                "value": 9
+              },
+              "fill": {
+                "value": "#5f6e61"
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "type": "symbol",
@@ -124,7 +179,7 @@
             "signal": "datum.x*width"
           },
           "y": {
-            "signal": "datum.y*height"
+            "signal": "datum.y*width"
           },
           "size": {
             "scale": "area",
@@ -134,7 +189,8 @@
             "signal": "{'State':datum.state,'Financial year':datum.period,'AUD million':format(datum.value_m,',.1f')}"
           }
         }
-      }
+      },
+      "name": "nurseryCircles"
     },
     {
       "type": "text",
@@ -147,25 +203,28 @@
             "signal": "datum.x*width"
           },
           "y": {
-            "signal": "datum.y*height"
+            "signal": "datum.y*width"
           },
           "text": {
             "field": "abbr"
           },
           "fontSize": {
-            "value": 11
+            "signal": "width<350 ? 10 : 12"
           },
           "fontWeight": {
             "value": "bold"
           },
           "fill": {
-            "signal": "datum.value_m>100 ? 'white' : '#20392d'"
+            "signal": "datum.value_m>100 && datum.abbr!='TAS' ? 'white' : '#20392d'"
           },
           "dy": {
-            "signal": "datum.value_m>100 ? 3 : -15"
+            "signal": "datum.value_m>100 ? 3 : datum.abbr=='TAS' ? 3 : -sqrt(scale('area',datum.value_m)/4)-5"
           },
           "align": {
-            "value": "center"
+            "signal": "datum.abbr=='TAS' ? 'left' : 'center'"
+          },
+          "dx": {
+            "signal": "datum.abbr=='TAS' ? sqrt(scale('area',datum.value_m)/4)+5 : 0"
           }
         }
       }
@@ -178,9 +237,9 @@
       "orient": "bottom",
       "direction": "horizontal",
       "values": [
-        50,
-        250,
-        800
+        25,
+        100,
+        250
       ],
       "symbolFillColor": "#527647",
       "titleFontSize": 10,
@@ -209,8 +268,9 @@
         "signal": "data('geography')"
       },
       "size": {
-        "signal": "[width,height]"
+        "signal": "[width*0.28,width*0.20]"
       }
     }
-  ]
+  ],
+  "description": "A Dorling cartogram: state circles replace geographic areas, with areas proportional to nursery production value. Collision displacement preserves approximate relative geography. A separate inset supplies geographic context."
 }

@@ -4,7 +4,7 @@
   "height": 310,
   "config": {
     "background": "transparent",
-    "font": "Arial",
+    "font": "Source Sans 3",
     "view": {
       "stroke": null
     },
@@ -89,10 +89,11 @@
               55
             ],
             "range": [
-              "#276f8a",
-              "#f1f1e7",
-              "#bf5922"
-            ]
+              "#6b3f8c",
+              "#f5f3e9",
+              "#a88600"
+            ],
+            "interpolate": "rgb"
           },
           "legend": {
             "orient": "bottom"
@@ -136,10 +137,10 @@
         },
         "color": {
           "condition": {
-            "test": "abs(datum.value_growth)>35",
+            "test": "luminance(scale('color',datum.value_growth))<0.179",
             "value": "white"
           },
-          "value": "#25362f"
+          "value": "black"
         }
       }
     }
