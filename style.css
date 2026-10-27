@@ -15,7 +15,6 @@
 h1,h2,h3,.intro .question,.hero-summary strong,footer strong{font-optical-sizing:auto}
 h1{letter-spacing:-3px;line-height:1.04}h2{letter-spacing:-.8px;line-height:1.18}
 .chart-card figcaption{min-height:0}.chart-note{font-size:12px}
-.chart-spec{align-self:flex-start;margin-top:12px;font-size:12px;text-decoration:none;border-bottom:1px solid currentColor}
 .sources p,.sources li{font-size:14px}footer{font-size:13px}
 @media(max-width:520px){h1{font-size:clamp(45px,10.5vw,64px);letter-spacing:-1.5px}.chapter-heading h2{font-size:29px}.chart-note{font-size:11px}}
 

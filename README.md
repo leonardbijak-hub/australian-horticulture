@@ -15,7 +15,7 @@ I organised the story into four sections: growth, geography, output, and markets
 - `index.html`, `style.css`, `app.js`: the scrolling webpage.
 - `fonts/`: self-hosted Fraunces and Source Sans 3, with their licences.
 - `scripts/build_cartogram.py`: reproducible Dorling circle displacement without changing published values.
-- `text-layout.js`: wraps webpage text at ten words or 60 characters, whichever limit is reached first, while preserving inline formatting and links. Narrow screens can wrap those lines further.
+- `text-layout.js`: wraps webpage text at ten words or 60 characters, whichever limit is reached first, while preserving inline formatting and links. Narrow screens can wrap those lines further. Sources & definitions is exempt and wraps naturally.
 - `01.vl.json` to `13.vl.json` / `*.vg.json`: individual, human-readable Vega or Vega-Lite specifications.
 - CSV and JSON files: prepared chart data, with original units and sources.
 - `australia.topojson`: simplified ABS ASGS Edition 3 state boundaries.

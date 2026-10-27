@@ -74,9 +74,9 @@
   }
 
   function wrap(){
-    const selector='h1,h2,h3,p,.sources li,footer>div>span';
+    const selector='h1,h2,h3,p,footer>div>span';
     for(const element of document.querySelectorAll(selector)){
-      if(!element.closest('.chart,svg,noscript'))limitLines(element);
+      if(!element.closest('.chart,svg,noscript,.sources'))limitLines(element);
     }
   }
   if(typeof window!=='undefined')window.horticultureTextLayout={wrap};
