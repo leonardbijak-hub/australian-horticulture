@@ -103,6 +103,6 @@ I limit each text line to ten words or 60 characters, whichever is reached first
 
 The page locally hosts version-pinned Vega libraries and reuses data loads. Prepared data and specifications total well below a few megabytes. There are no original third-party graphics, stock photographs or copied dashboards.
 
-Leo · 14 October 2026. I used ChatGPT/Codex to assist with research, data preparation, writing, coding and verification. My remaining submission tasks are recorded in the README.
+Leo · 14 October 2026. I used ChatGPT/Codex to assist with research, data preparation, writing, coding and verification.
 
-Last updated: 27 October 2026. I retained the four-section structure, removed the Chart spec buttons and exempted Sources & definitions from the line limits. My digital sketch guide is a drawing reference; the required submission is an image of my own hand-drawn sketch in a PDF, aligned with the final page.
+Last updated: 27 October 2026. I retained the four-section structure, removed the Chart spec buttons and exempted Sources & definitions from the line limits. My hand-drawn A4 sketch is in [DV2 Sketch.pdf](DV2%20Sketch.pdf); the page follows its four-section structure and chart order.

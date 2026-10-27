@@ -20,7 +20,8 @@ I organised the story into four sections: growth, geography, output, and markets
 - CSV and JSON files: prepared chart data, with original units and sources.
 - `australia.topojson`: simplified ABS ASGS Edition 3 state boundaries.
 - `METHODS.md`: source coverage, preparation, formulas, limitations and What/Why/How design rationale.
-- `HAND_DRAWN_SKETCH_GUIDE.md`: my layout plan for the required hand-drawn A4 sketch. The actual sketch still needs to be added.
+- `DV2 Sketch.pdf`: my hand-drawn A4 sketch (four pages), scanned to PDF.
+- `HAND_DRAWN_SKETCH_GUIDE.md`: my layout plan for the hand-drawn sketch.
 - Vendor scripts and `THIRD_PARTY_LICENSES.txt`: pinned, locally hosted Vega 5.30.0, Vega-Lite 5.20.1 and Vega-Embed 6.26.0.
 
 ## Running
@@ -33,9 +34,11 @@ I checked all 13 specifications by compiling and rendering them to SVG with the 
 
 I have linked the original PDFs and spreadsheets in METHODS.md. The source datasets retain their publishers' conditions, and the repository includes the third-party software licences.
 
-## Remaining submission tasks
+## Sketch
 
-I still need to draw the A4 sketch by hand, scan or photograph it, and add the sketch PDF. It should follow the same four-section structure as the page. I also need to review the final narrative and data, prepare to explain my design choices in the studio interview, and submit through Moodle.
+[View my hand-drawn sketch (PDF)](DV2%20Sketch.pdf)
+
+The four-page A4 sketch follows the same structure as the webpage: the title and sector-value callouts, the four numbered sections (growth, geography, output, and markets and growers), all 13 charts in page order, and the closing conclusion.
 
 ## Acknowledgements
 
